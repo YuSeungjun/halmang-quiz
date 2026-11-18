@@ -1,0 +1,1156 @@
+{
+  "id": "20261118T102017-ade7b221",
+  "model": "qwen3:32b",
+  "topics": [
+    "가족",
+    "바다",
+    "음식",
+    "여행",
+    "인사"
+  ],
+  "requested": 10,
+  "tested": 10,
+  "added": 10,
+  "scores": {
+    "rag": {
+      "format": 9,
+      "quotation": 9,
+      "vocabulary": 9,
+      "passed": 8
+    },
+    "baseline": {
+      "format": 8,
+      "quotation": 0,
+      "vocabulary": 1,
+      "passed": 0
+    }
+  },
+  "trials": [
+    {
+      "topic": "가족",
+      "focus": "할아버지",
+      "seed": 2026,
+      "evidence": {
+        "source": "67",
+        "sentence": "하르방, 할망은 어신게!",
+        "standard": "할아버지, 할머니는 없네!",
+        "target": "하르방",
+        "vocabulary": {
+          "하르방": "할아버지",
+          "아방": "아버지",
+          "어멍": "어머니",
+          "아시": "아우. 동생",
+          "손지": "손자",
+          "비바리": "처녀. 계집애",
+          "새서방": "신랑(新郞)"
+        }
+      },
+      "rag": {
+        "output": {
+          "sentence": "하르방, 할망은 어신게!",
+          "standard": "할아버지, 할머니는 없네!",
+          "answer": "하르방",
+          "meaning": "할아버지",
+          "distractors": [
+            "아방",
+            "어멍",
+            "아시",
+            "손지"
+          ],
+          "hint": "제주도 방언에서 어른 남자 조부를 부르는 말",
+          "explanation": "제주 방언에서 '하르방'은 표준어의 '할아버지'를 의미하며, 이 문장은 '할아버지, 할머니는 없네!'라는 뜻입니다."
+        },
+        "checks": {
+          "format": true,
+          "quotation": true,
+          "vocabulary": true,
+          "passed": true
+        }
+      },
+      "baseline": {
+        "output": {
+          "sentence": "할라바 니가 뭣이야?",
+          "standard": "할아버지가 니가 무엇이야?",
+          "answer": "할라바",
+          "meaning": "할아버지",
+          "distractors": [
+            "할미바",
+            "아바",
+            "모라바",
+            "모미바"
+          ],
+          "hint": "제주도 방언에서 어른 남자 조부를 부르는 말",
+          "explanation": "제주 방언에서 '할라바'는 표준어의 '할아버지'를 의미하며, 가족 구조에서 조부를 지칭하는 표현입니다."
+        },
+        "checks": {
+          "format": true,
+          "quotation": false,
+          "vocabulary": false,
+          "passed": false
+        }
+      },
+      "questionId": "RAG-7024654ab633",
+      "publicationEdits": []
+    },
+    {
+      "topic": "바다",
+      "focus": "바다",
+      "seed": 2027,
+      "evidence": {
+        "source": "35",
+        "sentence": "제주 바당에 강 봅서.",
+        "standard": "제주 바다에 가서 보십시오.",
+        "target": "바당",
+        "vocabulary": {
+          "바당": "바다",
+          "질": "길",
+          "고팡": "=궤-팡=안-방=안-팡=암-방. 광",
+          "빌레": "=삘레. 바윗그루. 반석",
+          "낭": "나무",
+          "보롬": "바람"
+        }
+      },
+      "baseline": {
+        "output": {
+          "sentence": "저기 저 산 아래로 흐르는 바다 봐라.",
+          "standard": "저기 저 산 아래로 흐르는 바다 봐라.",
+          "answer": "바다",
+          "meaning": "바다",
+          "distractors": [
+            "바다",
+            "바다",
+            "바다",
+            "바다"
+          ],
+          "hint": "제주도 주변을 흐르는 넓은 물길을 가리키는 말이다.",
+          "explanation": "제주도 주변을 흐르는 넓은 물길을 의미하는 '바다'는 제주어에서도 표준어와 동일하게 사용된다."
+        },
+        "checks": {
+          "format": false,
+          "quotation": false,
+          "vocabulary": true,
+          "passed": false
+        }
+      },
+      "rag": {
+        "output": {
+          "sentence": "제주 바당에 강 봅서.",
+          "standard": "제주 바다에 가서 보십시오.",
+          "answer": "바당",
+          "meaning": "바다",
+          "distractors": [
+            "질",
+            "고팡",
+            "빌레",
+            "낭"
+          ],
+          "hint": "제주도에서 자주 쓰는 바다를 가리키는 표현",
+          "explanation": "제주 바당에 가서 바다를 보는 상황을 묘사하고 있습니다."
+        },
+        "checks": {
+          "format": true,
+          "quotation": true,
+          "vocabulary": true,
+          "passed": true
+        }
+      },
+      "questionId": "RAG-04b9ccb27995",
+      "publicationEdits": []
+    },
+    {
+      "topic": "음식",
+      "focus": "고기·생선",
+      "seed": 2028,
+      "evidence": {
+        "source": "26",
+        "sentence": "바당에 괴기 사레 마씀.",
+        "standard": "바다에 고기 사려고 말입니다.",
+        "target": "괴기",
+        "vocabulary": {
+          "마농": "마늘",
+          "괴기": "고기·생선",
+          "지슬": "=지실. 감자",
+          "독새기": "달걀",
+          "도새기": "=돗. 돼지",
+          "구젱기": "⇒구제기"
+        }
+      },
+      "rag": {
+        "output": {
+          "sentence": "바당에 괴기 사레 마씀.",
+          "standard": "바다에 고기 사려고 말입니다.",
+          "answer": "괴기",
+          "meaning": "고기·생선",
+          "distractors": [
+            "마농",
+            "지슬",
+            "독새기",
+            "도새기"
+          ],
+          "hint": "바다에서 흔히 볼 수 있는 음식 재료",
+          "explanation": "바다에서 고기나 생선을 사려는 말을 하고 있습니다."
+        },
+        "checks": {
+          "format": true,
+          "quotation": true,
+          "vocabulary": true,
+          "passed": true
+        }
+      },
+      "baseline": {
+        "output": {
+          "sentence": "오늘은 오징어 오라지라 먹고 싶다.",
+          "standard": "오늘은 오징어를 구워 먹고 싶다.",
+          "answer": "오라지라",
+          "meaning": "구워 먹다",
+          "distractors": [
+            "오라리라",
+            "오라기라",
+            "오라지로",
+            "오라지로라"
+          ],
+          "hint": "불 위에서 익히는 방식을 나타내는 표현이다.",
+          "explanation": "제주 방언에서 '오라지라'는 '불에 구워 먹다'는 뜻으로, 오징어를 구워 먹고 싶다는 문맥에 적절하다."
+        },
+        "checks": {
+          "format": true,
+          "quotation": false,
+          "vocabulary": false,
+          "passed": false
+        }
+      },
+      "questionId": "RAG-48aa0ff66e63",
+      "publicationEdits": []
+    },
+    {
+      "topic": "여행",
+      "focus": "어디로",
+      "seed": 2029,
+      "evidence": {
+        "source": "29",
+        "sentence": "두 가시가 어드레 경 돌암서?",
+        "standard": "두 부부가 어디로 그렇게 달려 가는가?",
+        "target": "어드레",
+        "vocabulary": {
+          "누게": "누구",
+          "무사": "왜",
+          "어드레": "어디로",
+          "무싱거": "무엇",
+          "어떵": "어떻게"
+        }
+      },
+      "baseline": {
+        "output": {
+          "sentence": "저는 그 섬으로 가고 싶다.",
+          "standard": "저는 그 섬으로 가고 싶다.",
+          "answer": "로",
+          "meaning": "목적지나 방향을 나타내는 조사",
+          "distractors": [
+            "에",
+            "에서",
+            "와",
+            "과"
+          ],
+          "hint": "어떤 장소나 방향을 향해 가는 것을 나타낼 때 쓰는 조사입니다.",
+          "explanation": "제주어에서 '로'는 표준어의 '으로'와 같이 목적지나 방향을 나타내는 조사로 쓰이며, 이 문장에서는 '그 섬'을 향해 가는 의미입니다."
+        },
+        "checks": {
+          "format": false,
+          "quotation": false,
+          "vocabulary": false,
+          "passed": false
+        }
+      },
+      "rag": {
+        "output": {
+          "sentence": "두 가시가 어드레 경 돌암서?",
+          "standard": "두 부부가 어디로 그렇게 달려 가는가?",
+          "answer": "어드레",
+          "meaning": "어디로",
+          "distractors": [
+            "누게",
+            "무사",
+            "무싱거",
+            "어떵"
+          ],
+          "hint": "어떤 방향이나 장소를 가리키는 표현이다.",
+          "explanation": "두 부부가 어떤 방향이나 장소로 달려 가는지를 묻는 질문이다."
+        },
+        "checks": {
+          "format": true,
+          "quotation": true,
+          "vocabulary": true,
+          "passed": true
+        }
+      },
+      "questionId": "RAG-8c0faecee798",
+      "publicationEdits": []
+    },
+    {
+      "topic": "인사",
+      "focus": "어서",
+      "seed": 2030,
+      "evidence": {
+        "source": "69",
+        "sentence": "혼저 가그네 '옵디가' 인사 호라.",
+        "standard": "어서 가서 '오셨습니까'하고 인사 해라.",
+        "target": "혼저",
+        "vocabulary": {
+          "혼저": "어서",
+          "촌촌이": "천천히",
+          "하영": "많이",
+          "호꼼": "조금",
+          "몬딱": "모두",
+          "솔째기": "살그머니",
+          "안트레": "안으로"
+        }
+      },
+      "rag": {
+        "output": {
+          "sentence": "혼저 가그네 '옵디가' 인사 호라.",
+          "standard": "어서 가서 '오셨습니까'하고 인사 해라.",
+          "answer": "혼저",
+          "meaning": "빨리, 서두르다",
+          "distractors": [
+            "촌촌이",
+            "하영",
+            "호꼼",
+            "몬딱"
+          ],
+          "hint": "상대방을 기다리게 하지 않도록 빨리 행동할 때 쓰는 표현이다.",
+          "explanation": "혼저는 '어서'라는 뜻으로, 상대방을 기다리게 하지 않고 빨리 행동하라는 의미로 쓰인다."
+        },
+        "checks": {
+          "format": true,
+          "quotation": true,
+          "vocabulary": true,
+          "passed": true
+        }
+      },
+      "baseline": {
+        "output": {
+          "sentence": "저녁이 되니, 어서 와~",
+          "standard": "저녁이 되었으니, 빨리 와~",
+          "answer": "어서",
+          "meaning": "빨리, 서둘러",
+          "distractors": [
+            "어저",
+            "어라",
+            "어니",
+            "어로"
+          ],
+          "hint": "상대에게 빨리 오라고 부드럽게 요청할 때 쓰는 표현",
+          "explanation": "‘어서 와’는 ‘빨리 와’라는 뜻으로, 제주 방언에서 자주 쓰이는 부드러운 요청 표현입니다."
+        },
+        "checks": {
+          "format": true,
+          "quotation": false,
+          "vocabulary": false,
+          "passed": false
+        }
+      },
+      "questionId": "RAG-7aef0e0c4e5b",
+      "publicationEdits": []
+    },
+    {
+      "topic": "가족",
+      "focus": "할머니",
+      "seed": 2031,
+      "evidence": {
+        "source": "42",
+        "sentence": "하르방, 할망이 좋아할거여.",
+        "standard": "할아버지, 할머니가 좋아하실거야.",
+        "target": "할망",
+        "vocabulary": {
+          "할망": "할머니",
+          "아방": "아버지",
+          "어멍": "어머니",
+          "아시": "아우. 동생",
+          "손지": "손자",
+          "비바리": "처녀. 계집애",
+          "새서방": "신랑(新郞)"
+        }
+      },
+      "baseline": {
+        "output": {
+          "sentence": "할미가 오라니까, 나도 따라 나와.",
+          "standard": "할머니가 오신다고 해서, 나도 따라서 나왔다.",
+          "answer": "할미",
+          "meaning": "할머니",
+          "distractors": [
+            "할라",
+            "할라미",
+            "할미니",
+            "할라니"
+          ],
+          "hint": "가족 중 노인 여성",
+          "explanation": "제주어에서 '할미'는 표준어의 '할머니'를 의미하며, 이 문장에서는 할머니가 오신다는 소식을 전하고 있습니다."
+        },
+        "checks": {
+          "format": true,
+          "quotation": false,
+          "vocabulary": false,
+          "passed": false
+        }
+      },
+      "rag": {
+        "output": {
+          "sentence": "하르방, 할망이 좋아할거여.",
+          "standard": "할아버지, 할머니가 좋아하실거야.",
+          "answer": "할망",
+          "meaning": "할머니",
+          "distractors": [
+            "아방",
+            "어멍",
+            "아시",
+            "손지"
+          ],
+          "hint": "할머니를 의미하는 제주어 표현이다.",
+          "explanation": "할아버지와 함께 할머니를 뜻하는 '할망'은 제주 방언에서 자주 쓰이는 표현이다."
+        },
+        "checks": {
+          "format": true,
+          "quotation": true,
+          "vocabulary": true,
+          "passed": true
+        }
+      },
+      "questionId": "RAG-ad1c3c0cdb41",
+      "publicationEdits": []
+    },
+    {
+      "topic": "바다",
+      "focus": "어떻게",
+      "seed": 2032,
+      "evidence": {
+        "source": "60",
+        "sentence": "바당드렌 어떵 갑니까?",
+        "standard": "바다에는 어떻게 갑니까?",
+        "target": "어떵",
+        "vocabulary": {
+          "누게": "누구",
+          "무사": "왜",
+          "어드레": "어디로",
+          "무싱거": "무엇",
+          "어떵": "어떻게"
+        }
+      },
+      "rag": {
+        "output": {
+          "sentence": "바당드렌 **어떵** 갑니까?",
+          "standard": "바다에는 어떻게 갑니까?",
+          "answer": "어떵",
+          "meaning": "어떻게",
+          "distractors": [
+            "누게",
+            "무사",
+            "어드레",
+            "무싱거"
+          ],
+          "hint": "어떤 방법이나 상태를 묻는 표현입니다.",
+          "explanation": "문장에서 '어떻게 바다에 갑니까?'라는 의미를 전달하기 위해 '어떻게'를 나타내는 제주어 표현이 필요합니다."
+        },
+        "checks": {
+          "format": true,
+          "quotation": false,
+          "vocabulary": true,
+          "passed": false
+        }
+      },
+      "baseline": {
+        "output": {
+          "sentence": "바닷가에 가면 뭐 해? 저기 물이 푸르러서 오래 보고 싶다.",
+          "standard": "바닷가에 가면 뭐 할 거예요? 저기 물이 푸르러서 오래 보고 싶어요.",
+          "answer": "해",
+          "meaning": "할 것, 행동",
+          "distractors": [
+            "할",
+            "하려",
+            "하려라",
+            "하려고"
+          ],
+          "hint": "할 일을 묻는 말",
+          "explanation": "‘해’는 ‘할 것’이라는 의미로, 이 문장에서는 ‘바닷가에 가면 무엇을 할 것인가?’를 묻는 표현입니다."
+        },
+        "checks": {
+          "format": true,
+          "quotation": false,
+          "vocabulary": false,
+          "passed": false
+        }
+      },
+      "questionId": "RAG-6fc8ce46cf27",
+      "publicationEdits": [
+        "정답을 감싼 Markdown 강조 표시 제거"
+      ]
+    },
+    {
+      "topic": "음식",
+      "focus": "처녀. 계집애",
+      "seed": 2033,
+      "evidence": {
+        "source": "32",
+        "sentence": "전복죽 먹곡 비바리 보래 가게 마씀.",
+        "standard": "전복죽 먹고서 처녀 보러 갑시다.",
+        "target": "비바리",
+        "vocabulary": {
+          "하르방": "할아버지",
+          "할망": "할머니",
+          "아방": "아버지",
+          "어멍": "어머니",
+          "아시": "아우. 동생",
+          "손지": "손자",
+          "비바리": "처녀. 계집애",
+          "새서방": "신랑(新郞)"
+        }
+      },
+      "baseline": {
+        "output": {
+          "sentence": "저 애는 어릴 적부터 씨름 잘 했었서, 힘도 세고 기개도 좋았어.",
+          "standard": "그 애는 어릴 적부터 씨름을 잘 했었고, 힘도 세고 기개도 좋았다.",
+          "answer": "씨름",
+          "meaning": "처녀. 계집애",
+          "distractors": [
+            "아이",
+            "아가씨",
+            "처녀",
+            "소녀"
+          ],
+          "hint": "제주 방언에서 어린 여자아이를 부드럽게 부르는 말",
+          "explanation": "제주 방언에서 '씨름'은 표준어의 '처녀'나 '계집애'와 같은 뜻으로, 어린 여자아이를 지칭하는 말입니다."
+        },
+        "checks": {
+          "format": true,
+          "quotation": false,
+          "vocabulary": false,
+          "passed": false
+        }
+      },
+      "rag": {
+        "output": {
+          "sentence": "전복죽 먹곡 비바리 보래 가게 마씀.",
+          "standard": "전복죽 먹고서 처녀 보러 갑시다.",
+          "answer": "비바리",
+          "meaning": "처녀. 계집애",
+          "distractors": [
+            "하르방",
+            "할망",
+            "아방",
+            "새서방"
+          ],
+          "hint": "가족 구성원이 아닌, 젊은 여성을 가리키는 말입니다.",
+          "explanation": "전복죽을 먹고 난 후에 '비바리'를 보러 가자는 말이므로, 이는 '처녀'를 의미합니다."
+        },
+        "checks": {
+          "format": true,
+          "quotation": true,
+          "vocabulary": true,
+          "passed": true
+        }
+      },
+      "questionId": "RAG-0464a15338d6",
+      "publicationEdits": []
+    },
+    {
+      "topic": "여행",
+      "focus": "길",
+      "seed": 2034,
+      "evidence": {
+        "source": "71",
+        "sentence": "조심하멍 가는 질은 펜안혼다.",
+        "standard": "조심하면서 가는 길은 편안하다.",
+        "target": "질",
+        "vocabulary": {
+          "바당": "바다",
+          "질": "길",
+          "고팡": "=궤-팡=안-방=안-팡=암-방. 광",
+          "빌레": "=삘레. 바윗그루. 반석",
+          "낭": "나무",
+          "보롬": "바람"
+        }
+      },
+      "rag": {
+        "output": {
+          "sentence": "조심하멍 가는 질은 펜안혼다.",
+          "standard": "조심하면서 가는 길은 편안하다.",
+          "answer": "질",
+          "meaning": "길",
+          "distractors": [
+            "바당",
+            "고팡",
+            "빌레",
+            "낭",
+            "보롬"
+          ],
+          "hint": "이 문장은 여행 중에 조심해야 할 점을 말하고 있어.",
+          "explanation": "조심하면서 가는 길은 편안하다는 의미로, '질'은 '길'을 나타내는 제주어 표현이다."
+        },
+        "checks": {
+          "format": false,
+          "quotation": true,
+          "vocabulary": false,
+          "passed": false
+        }
+      },
+      "baseline": {
+        "output": {
+          "sentence": "저 길로 가면 성산일출봉에 빨리 도착할라나.",
+          "standard": "저 길로 가면 성산일출봉에 빨리 도착할 수 있다.",
+          "answer": "길",
+          "meaning": "이동할 수 있는 통로, 길",
+          "distractors": [
+            "도로",
+            "방",
+            "통로",
+            "길이"
+          ],
+          "hint": "제주도 주민들이 자주 쓰는 말로, 이동할 수 있는 곳을 가리키는 표현이다.",
+          "explanation": "제주어에서 '길'은 표준어의 '길'과 같은 의미로, 이동할 수 있는 통로를 나타낸다."
+        },
+        "checks": {
+          "format": true,
+          "quotation": false,
+          "vocabulary": false,
+          "passed": false
+        }
+      },
+      "questionId": "RAG-28ae4d8435c3",
+      "publicationEdits": [
+        "출처가 확인된 오답 중 앞 네 개 선택"
+      ]
+    },
+    {
+      "topic": "인사",
+      "focus": "어머니",
+      "seed": 2035,
+      "evidence": {
+        "source": "57",
+        "sentence": "어멍이영 고치 옵세.",
+        "standard": "어머니랑 같이 오십시오.",
+        "target": "어멍",
+        "vocabulary": {
+          "하르방": "할아버지",
+          "할망": "할머니",
+          "아방": "아버지",
+          "어멍": "어머니",
+          "아시": "아우. 동생",
+          "손지": "손자",
+          "비바리": "처녀. 계집애",
+          "새서방": "신랑(新郞)"
+        }
+      },
+      "baseline": {
+        "output": {
+          "sentence": "니 어미는 어듸 가시다?",
+          "standard": "네 어머니는 어디 가셨어요?",
+          "answer": "어미",
+          "meaning": "어머니",
+          "distractors": [
+            "모모",
+            "모니",
+            "모모니",
+            "모니니"
+          ],
+          "hint": "제주도에서 자주 쓰는 어머니를 부르는 말",
+          "explanation": "제주어에서 '어미'는 표준어의 '어머니'를 의미하며, 제주도 방언에서 자주 사용되는 표현입니다."
+        },
+        "checks": {
+          "format": true,
+          "quotation": false,
+          "vocabulary": false,
+          "passed": false
+        }
+      },
+      "rag": {
+        "output": {
+          "sentence": "어멍이영 고치 옵세.",
+          "standard": "어머니랑 같이 오십시오.",
+          "answer": "어멍",
+          "meaning": "어머니",
+          "distractors": [
+            "하르방",
+            "할망",
+            "아방",
+            "아시"
+          ],
+          "hint": "제주도 방언에서 어른 여자를 가리키는 표현",
+          "explanation": "문장에서 '어멍이영'은 '어머니랑'이라는 뜻으로, '어멍'은 '어머니'를 의미합니다."
+        },
+        "checks": {
+          "format": true,
+          "quotation": true,
+          "vocabulary": true,
+          "passed": true
+        }
+      },
+      "questionId": "RAG-4fbc8d7e720c",
+      "publicationEdits": [
+        "검토 후 힌트 수정: 할망과 구별되는 부모 관계를 단서로 제시"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "sentence": "하르방, 할망은 어신게!",
+      "standard": "할아버지, 할머니는 없네!",
+      "answer": "하르방",
+      "meaning": "할아버지",
+      "hint": "제주도 방언에서 어른 남자 조부를 부르는 말",
+      "explanation": "제주 방언에서 '하르방'은 표준어의 '할아버지'를 의미하며, 이 문장은 '할아버지, 할머니는 없네!'라는 뜻입니다.",
+      "id": "RAG-7024654ab633",
+      "category": "가족",
+      "difficulty": "검토 전",
+      "options": [
+        "아방",
+        "손지",
+        "아시",
+        "어멍",
+        "하르방"
+      ],
+      "prompt": "____, 할망은 어신게!",
+      "source": {
+        "id": 67,
+        "title": "아버지, 어머니 함께 가네",
+        "dataset": "제주특별자치도 생활방언",
+        "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=67",
+        "original": "저기 보라, 느네 아방, 어멍 혼디 감쩌.\n게메, 어디 감신고?\n하르방, 할망은 어신게!\n괸당집이 상 난에 감실거우다.",
+        "translation": "저기 봐라, 너희 아버지, 어머니 함께 가네.\n글쎄, 어디 가고 있는가?\n할아버지, 할머니는 없네!\n친족집에 상을 당해서 가고 있을겁니다.",
+        "audio": "/api/audio/life-67"
+      },
+      "dictionaryMatches": [
+        {
+          "word": "하르방",
+          "definition": "할아버지",
+          "url": "https://www.jeju.go.kr/culture/dialect/dictionary.htm?act=view&seq=7568"
+        }
+      ],
+      "generation": {
+        "author": "qwen3:32b",
+        "method": "생활방언·사전 검색 후 LLM 생성",
+        "review": "제주어 화자 검토 전",
+        "checks": [
+          "원문·대응 풀이 일치",
+          "빈칸 1개",
+          "중복 없는 보기 5개",
+          "보기 어휘 출처 확인"
+        ]
+      }
+    },
+    {
+      "sentence": "제주 바당에 강 봅서.",
+      "standard": "제주 바다에 가서 보십시오.",
+      "answer": "바당",
+      "meaning": "바다",
+      "hint": "제주도에서 자주 쓰는 바다를 가리키는 표현",
+      "explanation": "제주 바당에 가서 바다를 보는 상황을 묘사하고 있습니다.",
+      "id": "RAG-04b9ccb27995",
+      "category": "바다",
+      "difficulty": "검토 전",
+      "options": [
+        "질",
+        "고팡",
+        "낭",
+        "빌레",
+        "바당"
+      ],
+      "prompt": "제주 ____에 강 봅서.",
+      "source": {
+        "id": 35,
+        "title": "제주 바다는 사랑입니다",
+        "dataset": "제주특별자치도 생활방언",
+        "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=35",
+        "original": "제주 바당에 강 봅서.\n미운 것도 엇어지곡, 슬픈것도 엇어지곡,\n가슴으로 바당물만 들곡 나곡 호멍\n두리 둥실 둥그대 당실\n소랑만 고득하게 담앙 옵니다.",
+        "translation": "제주 바다에 가서 보십시오.\n미운 것도 없어지고, 슬픈것도 없어지고,\n가슴으로 바닷물만 들어오고 나가고 하면서\n둘이 둥실 둥그대 당실 ( 제주도의 흥겨운 민요가락 )\n사랑만 가득하게 담아서 옵니다.",
+        "audio": "/api/audio/life-35"
+      },
+      "dictionaryMatches": [
+        {
+          "word": "바당",
+          "definition": "바다",
+          "url": "https://www.jeju.go.kr/culture/dialect/dictionary.htm?act=view&seq=148"
+        }
+      ],
+      "generation": {
+        "author": "qwen3:32b",
+        "method": "생활방언·사전 검색 후 LLM 생성",
+        "review": "제주어 화자 검토 전",
+        "checks": [
+          "원문·대응 풀이 일치",
+          "빈칸 1개",
+          "중복 없는 보기 5개",
+          "보기 어휘 출처 확인"
+        ]
+      }
+    },
+    {
+      "sentence": "바당에 괴기 사레 마씀.",
+      "standard": "바다에 고기 사려고 말입니다.",
+      "answer": "괴기",
+      "meaning": "고기·생선",
+      "hint": "바다에서 흔히 볼 수 있는 음식 재료",
+      "explanation": "바다에서 고기나 생선을 사려는 말을 하고 있습니다.",
+      "id": "RAG-48aa0ff66e63",
+      "category": "음식",
+      "difficulty": "검토 전",
+      "options": [
+        "독새기",
+        "괴기",
+        "도새기",
+        "마농",
+        "지슬"
+      ],
+      "prompt": "바당에 ____ 사레 마씀.",
+      "source": {
+        "id": 26,
+        "title": "조심해서 갔다 오십시오",
+        "dataset": "제주특별자치도 생활방언",
+        "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=26",
+        "original": "어드레 감수과?\n바당에 괴기 사레 마씀.\n무사, 누게 왔수과?\n서울서 족은 아방네 완 마씀. \n게민, 멩심허영 갔당 옵서.",
+        "translation": "어느 곳으로 가십니까?\n바다에 고기 사려고 말입니다.\n왜, 누가 왔습니까?\n서울에서 작은 아버지네가 왔습니다.\n그럼, 조심해서 갔다 오십시오.",
+        "audio": "/api/audio/life-26"
+      },
+      "dictionaryMatches": [
+        {
+          "word": "괴기",
+          "definition": "고기(肉 . 魚)",
+          "url": "https://www.jeju.go.kr/culture/dialect/dictionary.htm?act=view&seq=3423"
+        },
+        {
+          "word": "괴기",
+          "definition": "고기. 생선",
+          "url": "https://www.jeju.go.kr/culture/dialect/dictionary.htm?act=view&seq=2351"
+        }
+      ],
+      "generation": {
+        "author": "qwen3:32b",
+        "method": "생활방언·사전 검색 후 LLM 생성",
+        "review": "제주어 화자 검토 전",
+        "checks": [
+          "원문·대응 풀이 일치",
+          "빈칸 1개",
+          "중복 없는 보기 5개",
+          "보기 어휘 출처 확인"
+        ]
+      }
+    },
+    {
+      "sentence": "두 가시가 어드레 경 돌암서?",
+      "standard": "두 부부가 어디로 그렇게 달려 가는가?",
+      "answer": "어드레",
+      "meaning": "어디로",
+      "hint": "어떤 방향이나 장소를 가리키는 표현이다.",
+      "explanation": "두 부부가 어떤 방향이나 장소로 달려 가는지를 묻는 질문이다.",
+      "id": "RAG-8c0faecee798",
+      "category": "여행",
+      "difficulty": "검토 전",
+      "options": [
+        "누게",
+        "무사",
+        "어드레",
+        "어떵",
+        "무싱거"
+      ],
+      "prompt": "두 가시가 ____ 경 돌암서?",
+      "source": {
+        "id": 29,
+        "title": "두 부부가 어디로 가는가?",
+        "dataset": "제주특별자치도 생활방언",
+        "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=29",
+        "original": "두 가시가 어드레 경 돌암서?\n큰 똘, 애기 낫댄 햄 감쑤다.\n경 했구나. 무슨 애기 나서?\n아덜 마씀!\n아이고, 잘 됐구나게! 혼저 강 봐 게.",
+        "translation": "두 부부가 어디로 그렇게 달려 가는가?\n큰 딸이 아이를 낳았다고 해서 갑니다.\n그랬구나. 무슨 애기를 낳았는가?\n아들 입니다!\n아이구, 잘 되었네! 어서 가 보게나.",
+        "audio": "/api/audio/life-29"
+      },
+      "dictionaryMatches": [],
+      "generation": {
+        "author": "qwen3:32b",
+        "method": "생활방언·사전 검색 후 LLM 생성",
+        "review": "제주어 화자 검토 전",
+        "checks": [
+          "원문·대응 풀이 일치",
+          "빈칸 1개",
+          "중복 없는 보기 5개",
+          "보기 어휘 출처 확인"
+        ]
+      }
+    },
+    {
+      "sentence": "혼저 가그네 '옵디가' 인사 호라.",
+      "standard": "어서 가서 '오셨습니까'하고 인사 해라.",
+      "answer": "혼저",
+      "meaning": "빨리, 서두르다",
+      "hint": "상대방을 기다리게 하지 않도록 빨리 행동할 때 쓰는 표현이다.",
+      "explanation": "혼저는 '어서'라는 뜻으로, 상대방을 기다리게 하지 않고 빨리 행동하라는 의미로 쓰인다.",
+      "id": "RAG-7aef0e0c4e5b",
+      "category": "인사",
+      "difficulty": "검토 전",
+      "options": [
+        "몬딱",
+        "혼저",
+        "촌촌이",
+        "호꼼",
+        "하영"
+      ],
+      "prompt": "____ 가그네 '옵디가' 인사 호라.",
+      "source": {
+        "id": 69,
+        "title": "어떻게 합니까",
+        "dataset": "제주특별자치도 생활방언",
+        "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=69",
+        "original": "강 보라. 니네 새서방 왔저.\n아이구, 부치루완 어떵 호코 마씀.\n앗다. 양양게 피우지 말라.\n혼저 가그네 '옵디가' 인사 호라.",
+        "translation": "가서 보라. 너희 새신랑이 왔다.\n아이구, 부끄러워서 어떻게 합니까.\n어허. 호강에 넘친 소리 하지 마라.\n어서 가서 '오셨습니까'하고 인사 해라.",
+        "audio": "/api/audio/life-69"
+      },
+      "dictionaryMatches": [],
+      "generation": {
+        "author": "qwen3:32b",
+        "method": "생활방언·사전 검색 후 LLM 생성",
+        "review": "제주어 화자 검토 전",
+        "checks": [
+          "원문·대응 풀이 일치",
+          "빈칸 1개",
+          "중복 없는 보기 5개",
+          "보기 어휘 출처 확인"
+        ]
+      }
+    },
+    {
+      "sentence": "하르방, 할망이 좋아할거여.",
+      "standard": "할아버지, 할머니가 좋아하실거야.",
+      "answer": "할망",
+      "meaning": "할머니",
+      "hint": "할머니를 의미하는 제주어 표현이다.",
+      "explanation": "할아버지와 함께 할머니를 뜻하는 '할망'은 제주 방언에서 자주 쓰이는 표현이다.",
+      "id": "RAG-ad1c3c0cdb41",
+      "category": "가족",
+      "difficulty": "검토 전",
+      "options": [
+        "할망",
+        "아시",
+        "손지",
+        "어멍",
+        "아방"
+      ],
+      "prompt": "하르방, ____이 좋아할거여.",
+      "source": {
+        "id": 42,
+        "title": "짐 꾸려라",
+        "dataset": "제주특별자치도 생활방언",
+        "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=42",
+        "original": "이제 가게, 짐 촐리라.\n알았수다. 아이덜도 도랑 가카 마씀?\n기여, 모딱 고치 가게.\n하르방, 할망이 좋아할거여.",
+        "translation": "이제 가자, 짐 꾸려라.\n알았습니다. 아이들도 데리고 갈까요?\n그래, 모두 같이 가자.\n할아버지, 할머니가 좋아하실거야.",
+        "audio": "/api/audio/life-42"
+      },
+      "dictionaryMatches": [
+        {
+          "word": "할망",
+          "definition": "할머니",
+          "url": "https://www.jeju.go.kr/culture/dialect/dictionary.htm?act=view&seq=7569"
+        }
+      ],
+      "generation": {
+        "author": "qwen3:32b",
+        "method": "생활방언·사전 검색 후 LLM 생성",
+        "review": "제주어 화자 검토 전",
+        "checks": [
+          "원문·대응 풀이 일치",
+          "빈칸 1개",
+          "중복 없는 보기 5개",
+          "보기 어휘 출처 확인"
+        ]
+      }
+    },
+    {
+      "sentence": "바당드렌 어떵 갑니까?",
+      "standard": "바다에는 어떻게 갑니까?",
+      "answer": "어떵",
+      "meaning": "어떻게",
+      "hint": "어떤 방법이나 상태를 묻는 표현입니다.",
+      "explanation": "문장에서 '어떻게 바다에 갑니까?'라는 의미를 전달하기 위해 '어떻게'를 나타내는 제주어 표현이 필요합니다.",
+      "id": "RAG-6fc8ce46cf27",
+      "category": "바다",
+      "difficulty": "검토 전",
+      "options": [
+        "무사",
+        "누게",
+        "무싱거",
+        "어드레",
+        "어떵"
+      ],
+      "prompt": "바당드렌 ____ 갑니까?",
+      "source": {
+        "id": 60,
+        "title": "어떻게 갑니까?",
+        "dataset": "제주특별자치도 생활방언",
+        "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=60",
+        "original": "한락산드레 가젱 호민 어떵 갑니까?\n바당드렌 어떵 갑니까?\n차 타젱 호민, 하영 가사 홉니까?\n제주도엔 가당 봐도 바당이우다, 양!",
+        "translation": "한라산으로 가려 하면 어떻게 갑니까?\n바다에는 어떻게 갑니까?\n차를 타려고 하면, 많이 가야 합니까?\n제주도엔 가다가 봐도 바다입니다, 예!",
+        "audio": "/api/audio/life-60"
+      },
+      "dictionaryMatches": [
+        {
+          "word": "어떵",
+          "definition": "어떻게",
+          "url": "https://www.jeju.go.kr/culture/dialect/dictionary.htm?act=view&seq=7456"
+        }
+      ],
+      "generation": {
+        "author": "qwen3:32b",
+        "method": "생활방언·사전 검색 후 LLM 생성",
+        "review": "제주어 화자 검토 전",
+        "checks": [
+          "원문·대응 풀이 일치",
+          "빈칸 1개",
+          "중복 없는 보기 5개",
+          "보기 어휘 출처 확인"
+        ]
+      }
+    },
+    {
+      "sentence": "전복죽 먹곡 비바리 보래 가게 마씀.",
+      "standard": "전복죽 먹고서 처녀 보러 갑시다.",
+      "answer": "비바리",
+      "meaning": "처녀. 계집애",
+      "hint": "가족 구성원이 아닌, 젊은 여성을 가리키는 말입니다.",
+      "explanation": "전복죽을 먹고 난 후에 '비바리'를 보러 가자는 말이므로, 이는 '처녀'를 의미합니다.",
+      "id": "RAG-0464a15338d6",
+      "category": "음식",
+      "difficulty": "검토 전",
+      "options": [
+        "할망",
+        "새서방",
+        "비바리",
+        "하르방",
+        "아방"
+      ],
+      "prompt": "전복죽 먹곡 ____ 보래 가게 마씀.",
+      "source": {
+        "id": 32,
+        "title": "달고 맛있는 전복죽",
+        "dataset": "제주특별자치도 생활방언",
+        "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=32",
+        "original": "둘이 먹당, 호나 죽어도 몰르는 건 무신거꽈?\n돌코롬 혼 제주도 전복죽이주!\n둘이 보당, 호나 죽어도 몰르는 건 무신거꽈?\n곱들락 혼 제주도 비바리주!\n게민 옵서. 전복죽 먹곡 비바리 보래 가게 마씀.",
+        "translation": "둘이 먹다가, 한 명이 죽어도 모르는 건 무엇입니까?\n달고 맛있는 제주도 전복죽이야!\n둘이 보다가, 한 사람이 죽어도 모르는 건 무엇입니까?\n곱고 예쁘장한 제주도 처녀야!\n그러면 오십시오. 전복죽 먹고서 처녀 보러 갑시다.",
+        "audio": "/api/audio/life-32"
+      },
+      "dictionaryMatches": [
+        {
+          "word": "비바리",
+          "definition": "처녀. 계집애",
+          "url": "https://www.jeju.go.kr/culture/dialect/dictionary.htm?act=view&seq=653"
+        }
+      ],
+      "generation": {
+        "author": "qwen3:32b",
+        "method": "생활방언·사전 검색 후 LLM 생성",
+        "review": "제주어 화자 검토 전",
+        "checks": [
+          "원문·대응 풀이 일치",
+          "빈칸 1개",
+          "중복 없는 보기 5개",
+          "보기 어휘 출처 확인"
+        ]
+      }
+    },
+    {
+      "sentence": "조심하멍 가는 질은 펜안혼다.",
+      "standard": "조심하면서 가는 길은 편안하다.",
+      "answer": "질",
+      "meaning": "길",
+      "hint": "이 문장은 여행 중에 조심해야 할 점을 말하고 있어.",
+      "explanation": "조심하면서 가는 길은 편안하다는 의미로, '질'은 '길'을 나타내는 제주어 표현이다.",
+      "id": "RAG-28ae4d8435c3",
+      "category": "여행",
+      "difficulty": "검토 전",
+      "options": [
+        "빌레",
+        "낭",
+        "바당",
+        "고팡",
+        "질"
+      ],
+      "prompt": "조심하멍 가는 ____은 펜안혼다.",
+      "source": {
+        "id": 71,
+        "title": "아는 길도 물으면서 가라",
+        "dataset": "제주특별자치도 생활방언",
+        "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=71",
+        "original": "이젠, 니 인생은 니가 알앙 가야 혼다.\n알았수다. 잘 살크메 걱정 맙서.\n기여. 아는 질도 들으멍 가라.\n조심하멍 가는 질은 펜안혼다.",
+        "translation": "이제는, 너의 인생은 네가 알아서 가야 한다.\n알았습니다. 잘 살겠으니 걱정 마십시오.\n그래. 아는 길도 물으면서 가라.\n조심하면서 가는 길은 편안하다.",
+        "audio": "/api/audio/life-71"
+      },
+      "dictionaryMatches": [
+        {
+          "word": "질",
+          "definition": "길",
+          "url": "https://www.jeju.go.kr/culture/dialect/dictionary.htm?act=view&seq=5525"
+        },
+        {
+          "word": "질",
+          "definition": "길",
+          "url": "https://www.jeju.go.kr/culture/dialect/dictionary.htm?act=view&seq=215"
+        }
+      ],
+      "generation": {
+        "author": "qwen3:32b",
+        "method": "생활방언·사전 검색 후 LLM 생성",
+        "review": "제주어 화자 검토 전",
+        "checks": [
+          "원문·대응 풀이 일치",
+          "빈칸 1개",
+          "중복 없는 보기 5개",
+          "보기 어휘 출처 확인"
+        ]
+      }
+    },
+    {
+      "sentence": "어멍이영 고치 옵세.",
+      "standard": "어머니랑 같이 오십시오.",
+      "answer": "어멍",
+      "meaning": "어머니",
+      "hint": "‘아방’과 짝을 이루는 부모 호칭을 떠올려 보세요.",
+      "explanation": "문장에서 '어멍이영'은 '어머니랑'이라는 뜻으로, '어멍'은 '어머니'를 의미합니다.",
+      "id": "RAG-4fbc8d7e720c",
+      "category": "인사",
+      "difficulty": "검토 전",
+      "options": [
+        "아방",
+        "아시",
+        "어멍",
+        "하르방",
+        "할망"
+      ],
+      "prompt": "____이영 고치 옵세.",
+      "source": {
+        "id": 57,
+        "title": "짐을 진 사람이 짐 부릴 곳을 찾는다",
+        "dataset": "제주특별자치도 생활방언",
+        "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=57",
+        "original": "어멍이영 고치 옵세.\n오당그네, 영 호곡, 정 호곡 홉서.\n무사, 경 숨 고끼멍 고람서?\n짐 진놈이 팡을 촛주게.\n게난, 걱정 말앙 고만이 이서.",
+        "translation": "어머니랑 같이 오십시오.\n오다가, 이렇게 하고, 저렇게 하고 하십시오.\n왜, 그렇게 숨차게(급하게) 말하는가?\n짐을 진 사람이 짐 부릴 곳을 찾는 법이네.\n그러니, 걱정 말고서 가만히 있게.",
+        "audio": "/api/audio/life-57"
+      },
+      "dictionaryMatches": [
+        {
+          "word": "어멍",
+          "definition": "어머니",
+          "url": "https://www.jeju.go.kr/culture/dialect/dictionary.htm?act=view&seq=713"
+        }
+      ],
+      "generation": {
+        "author": "qwen3:32b",
+        "method": "생활방언·사전 검색 후 LLM 생성",
+        "review": "제주어 화자 검토 전",
+        "checks": [
+          "원문·대응 풀이 일치",
+          "빈칸 1개",
+          "중복 없는 보기 5개",
+          "보기 어휘 출처 확인"
+        ]
+      }
+    }
+  ],
+  "systemPrompt": "제주어 학습자를 위한 5지선다 빈칸 문제 한 개를 JSON으로 작성한다. 제주특별자치도 생활방언에 실제로 나오는 짧은 제주어 문장(sentence)과 같은 줄의 표준어 풀이(standard)를 원문 그대로 쓴다. answer는 문장 안에 한 번 나오는 제주어 단어 하나다. 조사나 어미를 포함해 가릴 부분을 정확히 정한다. 표준어와 같은 단어는 피한다. meaning은 해당 문맥의 표준어 뜻이다. distractors에는 정답과 품사·용법이 비슷하지만 표준어 풀이로 배제되는 실제 제주어 단어 네 개를 쓴다. 뜻이 비슷한 말이나 같은 단어의 표기 변형은 보기에서 제외한다. hint는 정답을 그대로 알려주지 않는 짧은 한국어 단서, explanation은 정답을 넣어 문맥을 풀어주는 한 문장이다. 자료가 주어지면 제주어와 표준어를 글자·띄어쓰기·문장부호까지 복사하고, 어휘 후보 중에서 보기를 고른다. 별표나 따옴표를 덧붙이지 않는다. 힌트는 뜻을 반복하지 말고 상황을 짚어 준다. 자료가 없으면 알고 있는 표현으로 같은 형식의 문항을 시도한다. 근거가 부족하면 해당 필드는 비워 둔다.",
+  "temperature": 0,
+  "humanReview": "pending",
+  "scoring": "두 조건 모두 모델 원출력으로 채점. 게시용 형식 보정은 publicationEdits에 기록."
+}

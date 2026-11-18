@@ -1,0 +1,254 @@
+{
+  "id": "20261118T104335-3b1cf57b",
+  "model": "qwen3:32b",
+  "topics": [
+    "음식"
+  ],
+  "requested": 10,
+  "tested": 2,
+  "added": 2,
+  "scores": {
+    "rag": {
+      "format": 2,
+      "quotation": 2,
+      "vocabulary": 2,
+      "passed": 2
+    },
+    "baseline": {
+      "format": 1,
+      "quotation": 0,
+      "vocabulary": 0,
+      "passed": 0
+    }
+  },
+  "trials": [
+    {
+      "topic": "음식",
+      "focus": "어머니",
+      "seed": 2026,
+      "evidence": {
+        "source": "27",
+        "sentence": "어멍이 해 준 밥 먹어 봅서.",
+        "standard": "어머니가 해 준 밥을 먹어 보십시오.",
+        "target": "어멍",
+        "vocabulary": {
+          "하르방": "할아버지",
+          "할망": "할머니",
+          "아방": "아버지",
+          "어멍": "어머니",
+          "아시": "아우. 동생",
+          "손지": "손자",
+          "비바리": "처녀. 계집애",
+          "새서방": "신랑(新郞)"
+        }
+      },
+      "rag": {
+        "output": {
+          "sentence": "어멍이 해 준 밥 먹어 봅서.",
+          "standard": "어머니가 해 준 밥을 먹어 보십시오.",
+          "answer": "어멍",
+          "meaning": "어머니",
+          "distractors": [
+            "하르방",
+            "할망",
+            "아방",
+            "아시"
+          ],
+          "hint": "이 단어는 가족 중에서 여성이며, 음식을 준비하는 사람을 가리키는 말입니다.",
+          "explanation": "문장에서 '어멍이 해 준 밥'은 어머니가 만든 밥을 의미합니다."
+        },
+        "checks": {
+          "format": true,
+          "quotation": true,
+          "vocabulary": true,
+          "passed": true
+        }
+      },
+      "baseline": {
+        "output": {
+          "sentence": "오늘 저녁에 어미가 냉면을 해 줄라.",
+          "standard": "오늘 저녁에 어머니가 냉면을 해 주실 거예요.",
+          "answer": "어미",
+          "meaning": "자신의 어머니를 가리키는 제주어 표현",
+          "distractors": [
+            "모모",
+            "모니",
+            "모",
+            "모모니"
+          ],
+          "hint": "제주도에서 자식이 부르는 어머니를 가리키는 표현",
+          "explanation": "제주도 방언에서 '어미'는 표준어 '어머니'를 의미하며, 자식이 부르는 친근한 표현입니다."
+        },
+        "checks": {
+          "format": true,
+          "quotation": false,
+          "vocabulary": false,
+          "passed": false
+        }
+      },
+      "questionId": "RAG-903ff125defd",
+      "publicationEdits": [
+        "검토 후 힌트 수정: 할망과 구별되는 부모 관계를 단서로 제시"
+      ]
+    },
+    {
+      "topic": "음식",
+      "focus": "어서",
+      "seed": 2027,
+      "evidence": {
+        "source": "18",
+        "sentence": "혼저 왕 먹읍서.",
+        "standard": "어서 와서 먹으십시오.",
+        "target": "혼저",
+        "vocabulary": {
+          "혼저": "어서",
+          "촌촌이": "천천히",
+          "하영": "많이",
+          "호꼼": "조금",
+          "몬딱": "모두",
+          "솔째기": "살그머니",
+          "안트레": "안으로"
+        }
+      },
+      "baseline": {
+        "output": {
+          "sentence": "밥이 다 되었니? 어서 와.",
+          "standard": "밥이 다 되었니? 빨리 와.",
+          "answer": "어서",
+          "meaning": "빨리, 서둘러",
+          "distractors": [
+            "아서",
+            "어서요",
+            "어서이",
+            "어서라",
+            "어서로"
+          ],
+          "hint": "상대에게 빨리 오라고 요청할 때 쓰는 표현",
+          "explanation": "‘어서 와’는 ‘빨리 와’라는 뜻으로, 상대에게 서둘러 오라고 말할 때 쓰는 제주어 표현입니다."
+        },
+        "checks": {
+          "format": false,
+          "quotation": false,
+          "vocabulary": false,
+          "passed": false
+        }
+      },
+      "rag": {
+        "output": {
+          "sentence": "혼저 왕 먹읍서.",
+          "standard": "어서 와서 먹으십시오.",
+          "answer": "혼저",
+          "meaning": "빨리, 즉시",
+          "distractors": [
+            "촌촌이",
+            "하영",
+            "호꼼",
+            "몬딱"
+          ],
+          "hint": "친구가 식사를 권할 때 쓰는 표현입니다.",
+          "explanation": "‘혼저 왕 먹읍서.’는 ‘어서 와서 먹으십시오.’라는 뜻으로, 손님이 빨리 와서 식사하라는 제주 방언 표현입니다."
+        },
+        "checks": {
+          "format": true,
+          "quotation": true,
+          "vocabulary": true,
+          "passed": true
+        }
+      },
+      "questionId": "RAG-cad58d221f4e",
+      "publicationEdits": []
+    }
+  ],
+  "questions": [
+    {
+      "sentence": "어멍이 해 준 밥 먹어 봅서.",
+      "standard": "어머니가 해 준 밥을 먹어 보십시오.",
+      "answer": "어멍",
+      "meaning": "어머니",
+      "hint": "밥을 해 준 사람이 누구인지 묻고 있어요. 부모 두 사람 중 ‘아방’과 짝이 되는 쪽이에요.",
+      "explanation": "문장에서 '어멍이 해 준 밥'은 어머니가 만든 밥을 의미합니다.",
+      "id": "RAG-903ff125defd",
+      "category": "음식",
+      "difficulty": "검토 전",
+      "options": [
+        "하르방",
+        "아시",
+        "아방",
+        "할망",
+        "어멍"
+      ],
+      "prompt": "____이 해 준 밥 먹어 봅서.",
+      "source": {
+        "id": 27,
+        "title": "무엇 때문인가요?",
+        "dataset": "제주특별자치도 생활방언",
+        "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=27",
+        "original": "어멍이 해 준 밥 먹어 봅서.\n촘말로 맛이 좋수다.\n무상고 마씀?\n그건 어머님의 사랑호는 모심이\n밥속에 고득 고득 들어 이시난 아니꽈.",
+        "translation": "어머니가 해 준 밥을 먹어 보십시오.\n정말로 맛이 좋습니다.\n무엇 때문인가요?\n그건 어머니의 사랑하는 마음이\n밥속에 가득 가득히 들어 있기 때문 아닙니까.",
+        "audio": "/api/audio/life-27"
+      },
+      "dictionaryMatches": [
+        {
+          "word": "어멍",
+          "definition": "어머니",
+          "url": "https://www.jeju.go.kr/culture/dialect/dictionary.htm?act=view&seq=713"
+        }
+      ],
+      "generation": {
+        "author": "qwen3:32b",
+        "method": "생활방언·사전 검색 후 LLM 생성",
+        "review": "제주어 화자 검토 전",
+        "checks": [
+          "원문·대응 풀이 일치",
+          "빈칸 1개",
+          "중복 없는 보기 5개",
+          "보기 어휘 출처 확인"
+        ]
+      }
+    },
+    {
+      "sentence": "혼저 왕 먹읍서.",
+      "standard": "어서 와서 먹으십시오.",
+      "answer": "혼저",
+      "meaning": "빨리, 즉시",
+      "hint": "친구가 식사를 권할 때 쓰는 표현입니다.",
+      "explanation": "‘혼저 왕 먹읍서.’는 ‘어서 와서 먹으십시오.’라는 뜻으로, 손님이 빨리 와서 식사하라는 제주 방언 표현입니다.",
+      "id": "RAG-cad58d221f4e",
+      "category": "음식",
+      "difficulty": "검토 전",
+      "options": [
+        "촌촌이",
+        "하영",
+        "몬딱",
+        "호꼼",
+        "혼저"
+      ],
+      "prompt": "____ 왕 먹읍서.",
+      "source": {
+        "id": 18,
+        "title": "따뜻할 때 후루룩 마셔 버리십시오",
+        "dataset": "제주특별자치도 생활방언",
+        "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=18",
+        "original": "혼저 왕 먹읍서. \n맨도롱 했수과?\n똣똣혼 게 먹기 똑 좋았수다.\n맨도롱 홀 때 호로록 들여 싸붑서.",
+        "translation": "어서 와서 먹으십시오.\n따뜻합니까?\n따끈따끈한 것이 먹기에 꼭 좋았습니다.\n따뜻할 때 후루룩(입에 넣는 모습) 마셔 버리십시오.",
+        "audio": "/api/audio/life-18"
+      },
+      "dictionaryMatches": [],
+      "generation": {
+        "author": "qwen3:32b",
+        "method": "생활방언·사전 검색 후 LLM 생성",
+        "review": "제주어 화자 검토 전",
+        "checks": [
+          "원문·대응 풀이 일치",
+          "빈칸 1개",
+          "중복 없는 보기 5개",
+          "보기 어휘 출처 확인"
+        ]
+      }
+    }
+  ],
+  "systemPrompt": "제주어 학습자를 위한 5지선다 빈칸 문제 한 개를 JSON으로 작성한다. 제주특별자치도 생활방언에 실제로 나오는 짧은 제주어 문장(sentence)과 같은 줄의 표준어 풀이(standard)를 원문 그대로 쓴다. answer는 문장 안에 한 번 나오는 제주어 단어 하나다. 조사나 어미를 포함해 가릴 부분을 정확히 정한다. 표준어와 같은 단어는 피한다. meaning은 해당 문맥의 표준어 뜻이다. distractors에는 정답과 품사·용법이 비슷하지만 표준어 풀이로 배제되는 실제 제주어 단어 네 개를 쓴다. 뜻이 비슷한 말이나 같은 단어의 표기 변형은 보기에서 제외한다. hint는 정답을 그대로 알려주지 않는 짧은 한국어 단서, explanation은 정답을 넣어 문맥을 풀어주는 한 문장이다. 자료가 주어지면 제주어와 표준어를 글자·띄어쓰기·문장부호까지 복사하고, 어휘 후보 중에서 보기를 고른다. 별표나 따옴표를 덧붙이지 않는다. 힌트는 뜻을 반복하지 말고 상황을 짚어 준다. 자료가 없으면 알고 있는 표현으로 같은 형식의 문항을 시도한다. 근거가 부족하면 해당 필드는 비워 둔다.",
+  "temperature": 0,
+  "humanReview": "pending",
+  "scoring": "두 조건 모두 모델 원출력으로 채점. 게시용 형식 보정은 publicationEdits에 기록."
+}

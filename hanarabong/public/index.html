@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f5ed">
+<title>하나라봉 · 할망의 제주어 낱말책</title>
+<link rel="icon" href="fruit.svg" type="image/svg+xml">
+<link rel="preload" href="assets/book.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" class="symbols" aria-hidden="true">
+<symbol id="stone-grandfather" viewBox="0 0 24 24">
+  <path fill="currentColor" stroke="none" d="M5 7a7.1 5.4 0 0 1 14 0c1.3.2 2 1 2 2.3v.7H3v-.7C3 8 3.7 7.2 5 7Z"/>
+  <path d="M5.7 11v5.1c0 3 2.2 4.9 6.3 4.9s6.3-1.9 6.3-4.9V11m-10 1.9h2.4m2.6 0h2.4M12 13l-.9 3h1.8m-2.7 2h3.6" stroke-width="1.7"/>
+</symbol>
+<symbol id="sound" viewBox="0 0 24 24"><path d="M3 9h4l5-4v14l-5-4H3Zm13-.5a5 5 0 0 1 0 7m3-10a9 9 0 0 1 0 13"/></symbol>
+<symbol id="mute" viewBox="0 0 24 24"><path d="M3 9h4l5-4v14l-5-4H3Zm14 0 5 6m0-6-5 6"/></symbol>
+<symbol id="help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.6 9a2.5 2.5 0 1 1 4.4 1.7c-1.1.9-2 1.2-2 3"/><circle cx="12" cy="16.7" r=".95" fill="currentColor" stroke="none"/></symbol>
+<symbol id="play" viewBox="0 0 24 24"><path d="M6.5 4.8c0-.7.8-1.1 1.4-.8l12.2 7.1a1 1 0 0 1 0 1.8L7.9 20c-.6.4-1.4-.1-1.4-.8Z" fill="currentColor" stroke="none"/></symbol>
+<symbol id="pause" viewBox="0 0 24 24"><path d="M8.5 5.5v13m7-13v13" stroke-width="4"/></symbol>
+<symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+<symbol id="chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+<symbol id="look-back" viewBox="0 0 24 24">
+  <path d="M4 9h10a5.5 5.5 0 0 1 0 11h-3.5M8.5 4.5 4 9l4.5 4.5" stroke-width="2.3"/>
+</symbol>
+<symbol id="check" viewBox="0 0 24 24"><path d="m5 12 4.5 4.5L19.5 6"/></symbol>
+<symbol id="close" viewBox="0 0 24 24"><path d="m6 6 12 12m0-12L6 18"/></symbol>
+<symbol id="hint" viewBox="0 0 24 24"><path d="M8.5 16c-.5-2.5-3-3-3-7a6.5 6.5 0 1 1 13 0c0 4-2.5 4.5-3 7ZM9 19h6m-5 3h4"/></symbol>
+<symbol id="again" viewBox="0 0 24 24"><path d="M4 5v6h6M4.8 10a8 8 0 1 1 .7 6"/></symbol>
+<symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></symbol>
+<symbol id="hangul-type" viewBox="0 0 24 24">
+  <path fill="currentColor" stroke="none" d="M3.9 6.1h9c-.3 5.1-2.7 9.3-8.7 12.2l-1.1-1.8c4.2-2.3 6.4-5.3 6.8-8.3h-6zM15 3.9h2.7v7.2h3.7v2.3h-3.7v7H15z"/>
+</symbol>
+<symbol id="swap" viewBox="0 0 24 24"><path d="M3 7.5h17m-4-4 4 4-4 4M17 16.5H4m4-4-4 4 4 4"/></symbol>
+<symbol id="pencil" viewBox="0 0 24 24"><path d="m4 16-1 5 5-1L20 8l-4-4Zm10-10 4 4"/></symbol>
+</svg>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="mast"><div class="shell mast-inner">
+<a class="brand" id="home-link" href="./" aria-label="하나라봉 처음으로"><img src="fruit.svg" alt=""><span>하나라봉</span></a>
+<nav class="chapter-nav" aria-label="학습 메뉴">
+<a href="#quiz" aria-current="page">낱말 퀴즈</a><a href="#translate">문장 번역</a>
+</nav>
+<nav id="quiz-settings" aria-label="퀴즈 설정"><button class="help-link" data-action="help"><svg class="icon"><use href="#help"/></svg>놀이 방법</button><button id="sound-toggle" class="sound-toggle" data-action="sound" aria-pressed="true"><svg class="icon"><use href="#sound"/></svg><span>소리 켜짐</span></button></nav>
+</div></header>
+<main id="main" class="shell" tabindex="-1">
+<section id="welcome">
+<div class="book-sheet welcome-sheet">
+<div class="welcome-copy">
+<div class="book-label"><svg class="icon"><use href="#stone-grandfather"/></svg>할망의 제주어 낱말책</div>
+<h1>혼저 옵서.</h1>
+<div class="translation">어서 오십시오.</div>
+<p class="intro">할망과 빈칸을 채우며 생활 속 제주어를 익혀요.</p>
+<button class="primary start" data-action="start"><svg class="icon"><use href="#play"/></svg>10문제 시작하기</button>
+<div class="round-spec"><span><svg class="icon"><use href="#hangul-type"/></svg>한 판 10문제</span><i></i><span>보기 5개</span><i></i><span>문제당 30초</span></div>
+</div>
+<figure class="postcard">
+<div class="tape" aria-hidden="true"></div>
+<div class="scene"><img class="scenery" src="assets/orchard.webp" alt=""><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/halmang_happy_still.png"><img class="welcome-halmang" src="assets/halmang_happy.gif" width="512" height="640" alt="감귤밭 돌담 앞에서 귤을 들고 웃는 제주 할망"></picture></div>
+<figcaption><span>제주에서, 할망이</span><div class="postmark" aria-hidden="true"><b>제주</b><svg viewBox="0 0 65 24" fill="none" stroke="currentColor"><path d="M2 6C18-2 33 13 61 4M2 12C18 4 33 19 61 10M2 18C18 10 33 25 61 16"/></svg></div></figcaption>
+</figure>
+</div>
+<section class="vocabulary" aria-labelledby="peek-title">
+<div class="section-head"><h2 id="peek-title"><svg class="icon"><use href="#hangul-type"/></svg>낱말 미리보기</h2><p>카드를 열어 문장을 들어보세요.</p></div>
+<div class="word-list">
+<button class="word-card" data-word="JEJU-008"><span class="word-art wave" aria-hidden="true"></span><span class="word-info"><strong>바당</strong><span>바다</span></span><svg class="icon"><use href="#chevron"/></svg></button>
+<button class="word-card" data-word="JEJU-010"><span class="word-art garlic" aria-hidden="true"></span><span class="word-info"><strong>마농</strong><span>마늘</span></span><svg class="icon"><use href="#chevron"/></svg></button>
+<button class="word-card" data-word="JEJU-011"><span class="word-art tree" aria-hidden="true"></span><span class="word-info"><strong>낭</strong><span>나무</span></span><svg class="icon"><use href="#chevron"/></svg></button>
+</div>
+</section>
+</section>
+<section id="game" hidden></section>
+<section id="translation-page" aria-labelledby="translation-title" hidden>
+  <header class="translation-heading">
+    <div>
+      <h1 id="translation-title">문장 번역</h1>
+      <p>문장을 적거나 추천 문장을 골라, 제주어와 표준어를 나란히 읽어 보세요.</p>
+    </div>
+    <div class="letter-stamp" aria-hidden="true"><img src="assets/orchard.webp" alt=""></div>
+  </header>
+
+  <section class="book-sheet phrasebook" aria-label="양방향 문장 번역">
+    <div class="phrase-spread">
+      <div class="phrase-page source-page">
+        <div class="phrase-label"><label id="source-language" for="source-example">표준어</label>
+        </div>
+        <textarea id="source-example" class="ruled-text" rows="3" maxlength="300" placeholder="번역할 문장을 적어 주세요." aria-describedby="source-count"></textarea>
+        <div class="source-meta"><span id="speech-status" role="status"></span><span id="source-count">0 / 300자</span></div>
+      </div>
+      <button type="button" id="swap-languages" class="swap-languages" aria-label="번역 방향 바꾸기" title="번역 방향 바꾸기"><svg class="icon" aria-hidden="true"><use href="#swap"/></svg></button>
+      <div class="phrase-page target-page">
+        <div class="phrase-label"><h2 id="target-language">제주어</h2>
+          <button type="button" id="jeju-listen" class="sentence-listen" title="VoxCPM2 · AI Hub + JSS · 목소리 03"><span class="listen-mark" aria-hidden="true"><svg class="icon"><use href="#sound"/></svg></span><span class="listen-label">제주어 듣기</span></button>
+        </div>
+        <p id="target-example" class="ruled-text" aria-live="polite" aria-atomic="true"></p>
+        <p id="result-speech-status" class="source-meta" role="status"></p>
+      </div>
+    </div>
+    <div class="phrasebook-foot">
+      <p id="translation-status" role="status"></p>
+      <div class="phrase-actions">
+        <button id="translation-reset" type="button"><svg class="icon" aria-hidden="true"><use href="#again"/></svg>초기화</button>
+        <button class="translation-submit" type="button"><span class="submit-ribbon" aria-hidden="true"></span><span>번역하기</span><span class="submit-percent" aria-hidden="true" hidden></span><svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></button>
+      </div>
+      <progress id="translation-progress" class="visually-hidden" max="100" value="0" aria-label="번역 예상 진행률" hidden></progress>
+    </div>
+  </section>
+
+  <section class="suggestions" aria-labelledby="suggestions-title">
+    <h2 id="suggestions-title"><svg class="icon" aria-hidden="true"><use href="#stone-grandfather"/></svg>추천 문장</h2>
+    <div class="suggestion-list">
+      <button type="button" class="suggestion" aria-pressed="true">
+        <span class="suggestion-topic">첫인사</span><strong data-lang="jeju" hidden>혼저 옵서.</strong><strong data-lang="standard">어서 오십시오.</strong>
+        <svg class="icon" aria-hidden="true"><use href="#check"/></svg>
+      </button>
+      <button type="button" class="suggestion" aria-pressed="false">
+        <span class="suggestion-topic">길 묻기</span><strong data-lang="jeju" hidden>바당드렌 어떵 갑니까?</strong><strong data-lang="standard">바다에는 어떻게 갑니까?</strong>
+        <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg>
+      </button>
+      <button type="button" class="suggestion" aria-pressed="false">
+        <span class="suggestion-topic">밥상에서</span><strong data-lang="jeju" hidden>먹을 것도 촘 하영 있저.</strong><strong data-lang="standard">먹을 것도 참 많이 있네.</strong>
+        <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg>
+      </button>
+    </div>
+  </section>
+</section>
+</main>
+<footer class="shell footer"><span><img src="fruit.svg" alt="">하나라봉</span><small>제주특별자치도 생활방언 자료를 바탕으로 만들었어요.</small></footer>
+<dialog id="dialog" aria-labelledby="dialog-title"><button class="dialog-close" aria-label="닫기" data-action="close"><svg class="icon"><use href="#close"/></svg></button><div id="dialog-content"></div></dialog>
+<div class="toast" id="notice" role="status" hidden></div>
+<audio id="voice" preload="none"></audio>
+</body></html>

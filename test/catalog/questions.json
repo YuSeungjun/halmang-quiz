@@ -1,0 +1,1073 @@
+[
+  {
+    "id": "JEJU-001",
+    "category": "인사",
+    "difficulty": "기초",
+    "sentence": "혼저 옵서.",
+    "prompt": "____ 옵서.",
+    "standard": "어서 오십시오.",
+    "answer": "혼저",
+    "meaning": "어서",
+    "options": [
+      "하영",
+      "호꼼",
+      "촌촌이",
+      "몬딱",
+      "혼저"
+    ],
+    "hint": "빈칸은 이 문장에서 “어서”에 해당하는 표현이에요.",
+    "explanation": "원문의 “혼저”은 이 문맥에서 “어서”이라는 뜻이에요. 표준어 풀이 “어서 오십시오.”와 비교해 보세요.",
+    "source": {
+      "dataset": "제주특별자치도 생활방언",
+      "id": 1,
+      "title": "어서 오십시오",
+      "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=1",
+      "original": "혼저 옵서. 제주도 사투리로 말 호난,\n무신 거옌 고람 신디 몰르쿠게?\n게메 마씀, 귀 눈이 왁왁하우다.\n경해도 고만히 생각호멍 들으민 조금씩 알아집니다.\n제주도 사투리 촘말로 귀하고 아름다운 보물이우다.",
+      "translation": "어서 오십시오. 제주도 사투리로 말 하니까,\n뭐라고 말하는 지 모르겠지요?\n글쎄 말입니다. 귀와 눈이 캄캄합니다.\n그래도 가만히 생각하며 들으면 조금씩 알게됩니다.\n제주도 사투리 정말로 귀하고 아름다운 보물입니다.",
+      "audio": "/api/audio/life-1"
+    },
+    "dictionaryMatches": [],
+    "generation": {
+      "author": "Codex (LLM)",
+      "method": "로컬 원문 검색 → 근거 기반 작성 → 구조 검증",
+      "review": "제주어 화자 검토 전",
+      "checks": [
+        "원문에 문장 존재",
+        "빈칸 1개",
+        "보기 5개·중복 없음",
+        "정답 포함",
+        "표준어 원문 일치"
+      ]
+    }
+  },
+  {
+    "id": "JEJU-002",
+    "category": "가족",
+    "difficulty": "기초",
+    "sentence": "아방, 어멍 다 펜안 했수과?",
+    "prompt": "아방, ____ 다 펜안 했수과?",
+    "standard": "아버지, 어머니 모두 편안 하셨습니까?",
+    "answer": "어멍",
+    "meaning": "어머니",
+    "options": [
+      "할망",
+      "어멍",
+      "비바리",
+      "아방",
+      "하르방"
+    ],
+    "hint": "빈칸은 이 문장에서 “어머니”에 해당하는 표현이에요.",
+    "explanation": "원문의 “어멍”은 이 문맥에서 “어머니”이라는 뜻이에요. 표준어 풀이 “아버지, 어머니 모두 편안 하셨습니까?”와 비교해 보세요.",
+    "source": {
+      "dataset": "제주특별자치도 생활방언",
+      "id": 91,
+      "title": "제주도 사투리 인사들",
+      "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=91",
+      "original": "누게 있수과? (사롬 있수과?)\n안녕 하우꽈?\n아방, 어멍 다 펜안 했수과?\n어디 갔당 왐쑤과?\n요새 어떵 살미꽈? 좋수과?",
+      "translation": "누구 있습니까?\n안녕 하십니까?\n아버지, 어머니 모두 편안 하셨습니까?\n어디 갔다가 오십니까?\n요새 어떻게 사십니까? 좋습니까?",
+      "audio": "/api/audio/life-91"
+    },
+    "dictionaryMatches": [
+      {
+        "word": "어멍",
+        "definition": "어머니",
+        "url": "https://www.jeju.go.kr/culture/dialect/dictionary.htm?act=view&seq=713"
+      }
+    ],
+    "generation": {
+      "author": "Codex (LLM)",
+      "method": "로컬 원문 검색 → 근거 기반 작성 → 구조 검증",
+      "review": "제주어 화자 검토 전",
+      "checks": [
+        "원문에 문장 존재",
+        "빈칸 1개",
+        "보기 5개·중복 없음",
+        "정답 포함",
+        "표준어 원문 일치"
+      ]
+    }
+  },
+  {
+    "id": "JEJU-003",
+    "category": "가족",
+    "difficulty": "기초",
+    "sentence": "아방, 어멍 다 펜안 했수과?",
+    "prompt": "____, 어멍 다 펜안 했수과?",
+    "standard": "아버지, 어머니 모두 편안 하셨습니까?",
+    "answer": "아방",
+    "meaning": "아버지",
+    "options": [
+      "어멍",
+      "하르방",
+      "아방",
+      "비바리",
+      "할망"
+    ],
+    "hint": "빈칸은 이 문장에서 “아버지”에 해당하는 표현이에요.",
+    "explanation": "원문의 “아방”은 이 문맥에서 “아버지”이라는 뜻이에요. 표준어 풀이 “아버지, 어머니 모두 편안 하셨습니까?”와 비교해 보세요.",
+    "source": {
+      "dataset": "제주특별자치도 생활방언",
+      "id": 91,
+      "title": "제주도 사투리 인사들",
+      "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=91",
+      "original": "누게 있수과? (사롬 있수과?)\n안녕 하우꽈?\n아방, 어멍 다 펜안 했수과?\n어디 갔당 왐쑤과?\n요새 어떵 살미꽈? 좋수과?",
+      "translation": "누구 있습니까?\n안녕 하십니까?\n아버지, 어머니 모두 편안 하셨습니까?\n어디 갔다가 오십니까?\n요새 어떻게 사십니까? 좋습니까?",
+      "audio": "/api/audio/life-91"
+    },
+    "dictionaryMatches": [
+      {
+        "word": "아방",
+        "definition": "아버지",
+        "url": "https://www.jeju.go.kr/culture/dialect/dictionary.htm?act=view&seq=702"
+      }
+    ],
+    "generation": {
+      "author": "Codex (LLM)",
+      "method": "로컬 원문 검색 → 근거 기반 작성 → 구조 검증",
+      "review": "제주어 화자 검토 전",
+      "checks": [
+        "원문에 문장 존재",
+        "빈칸 1개",
+        "보기 5개·중복 없음",
+        "정답 포함",
+        "표준어 원문 일치"
+      ]
+    }
+  },
+  {
+    "id": "JEJU-004",
+    "category": "인사",
+    "difficulty": "기초",
+    "sentence": "누게 있수과?",
+    "prompt": "____ 있수과?",
+    "standard": "누구 있습니까?",
+    "answer": "누게",
+    "meaning": "누구",
+    "options": [
+      "어드레",
+      "누게",
+      "어떵",
+      "어느제",
+      "무사"
+    ],
+    "hint": "빈칸은 이 문장에서 “누구”에 해당하는 표현이에요.",
+    "explanation": "원문의 “누게”은 이 문맥에서 “누구”이라는 뜻이에요. 표준어 풀이 “누구 있습니까?”와 비교해 보세요.",
+    "source": {
+      "dataset": "제주특별자치도 생활방언",
+      "id": 91,
+      "title": "제주도 사투리 인사들",
+      "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=91",
+      "original": "누게 있수과? (사롬 있수과?)\n안녕 하우꽈?\n아방, 어멍 다 펜안 했수과?\n어디 갔당 왐쑤과?\n요새 어떵 살미꽈? 좋수과?",
+      "translation": "누구 있습니까?\n안녕 하십니까?\n아버지, 어머니 모두 편안 하셨습니까?\n어디 갔다가 오십니까?\n요새 어떻게 사십니까? 좋습니까?",
+      "audio": "/api/audio/life-91"
+    },
+    "dictionaryMatches": [
+      {
+        "word": "누게",
+        "definition": "누구",
+        "url": "https://www.jeju.go.kr/culture/dialect/dictionary.htm?act=view&seq=5696"
+      }
+    ],
+    "generation": {
+      "author": "Codex (LLM)",
+      "method": "로컬 원문 검색 → 근거 기반 작성 → 구조 검증",
+      "review": "제주어 화자 검토 전",
+      "checks": [
+        "원문에 문장 존재",
+        "빈칸 1개",
+        "보기 5개·중복 없음",
+        "정답 포함",
+        "표준어 원문 일치"
+      ]
+    }
+  },
+  {
+    "id": "JEJU-005",
+    "category": "인사",
+    "difficulty": "기초",
+    "sentence": "어떵 살아 점쑤과?",
+    "prompt": "____ 살아 점쑤과?",
+    "standard": "어떻게 살고 있습니까?",
+    "answer": "어떵",
+    "meaning": "어떻게",
+    "options": [
+      "어떵",
+      "누게",
+      "어드레",
+      "어느제",
+      "무사"
+    ],
+    "hint": "빈칸은 이 문장에서 “어떻게”에 해당하는 표현이에요.",
+    "explanation": "원문의 “어떵”은 이 문맥에서 “어떻게”이라는 뜻이에요. 표준어 풀이 “어떻게 살고 있습니까?”와 비교해 보세요.",
+    "source": {
+      "dataset": "제주특별자치도 생활방언",
+      "id": 87,
+      "title": "어떻게 살고 있습니까?",
+      "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=87",
+      "original": "어느제 옵디가?\n혼 사나흘 됐수다.\n다들 펜안 했수과?\n어떵 살아 점쑤과?",
+      "translation": "언제 오셨습니까?\n한 사나흘 되었습니다.\n모두 편안 했습니까?\n어떻게 살고 있습니까?\n(※오랜만에 서로 만나 인사하는 말들)",
+      "audio": "/api/audio/life-87"
+    },
+    "dictionaryMatches": [
+      {
+        "word": "어떵",
+        "definition": "어떻게",
+        "url": "https://www.jeju.go.kr/culture/dialect/dictionary.htm?act=view&seq=7456"
+      }
+    ],
+    "generation": {
+      "author": "Codex (LLM)",
+      "method": "로컬 원문 검색 → 근거 기반 작성 → 구조 검증",
+      "review": "제주어 화자 검토 전",
+      "checks": [
+        "원문에 문장 존재",
+        "빈칸 1개",
+        "보기 5개·중복 없음",
+        "정답 포함",
+        "표준어 원문 일치"
+      ]
+    }
+  },
+  {
+    "id": "JEJU-006",
+    "category": "일상",
+    "difficulty": "기초",
+    "sentence": "새 각씨, 무사 안 왐쑤과?",
+    "prompt": "새 각씨, ____ 안 왐쑤과?",
+    "standard": "색씨, 왜 안 옵니까?",
+    "answer": "무사",
+    "meaning": "왜",
+    "options": [
+      "누게",
+      "어느제",
+      "어떵",
+      "어드레",
+      "무사"
+    ],
+    "hint": "빈칸은 이 문장에서 “왜”에 해당하는 표현이에요.",
+    "explanation": "원문의 “무사”은 이 문맥에서 “왜”이라는 뜻이에요. 표준어 풀이 “색씨, 왜 안 옵니까?”와 비교해 보세요.",
+    "source": {
+      "dataset": "제주특별자치도 생활방언",
+      "id": 53,
+      "title": "가서, 데리고 오십시오",
+      "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=53",
+      "original": "새 각씨, 무사 안 왐쑤과?\n어떵 된 거 아니우꽈?\n강, 돌앙 옵서.\n무신걸 경 몽캠신고?",
+      "translation": "색씨, 왜 안 옵니까?\n어떻게 된 거 아닙니까?\n가서, 데리고 오십시오.\n무었을 그렇게 늑장부리고 있는 건가?",
+      "audio": "/api/audio/life-53"
+    },
+    "dictionaryMatches": [
+      {
+        "word": "무사",
+        "definition": "왜",
+        "url": "https://www.jeju.go.kr/culture/dialect/dictionary.htm?act=view&seq=7557"
+      },
+      {
+        "word": "무사",
+        "definition": "왜",
+        "url": "https://www.jeju.go.kr/culture/dialect/dictionary.htm?act=view&seq=7413"
+      }
+    ],
+    "generation": {
+      "author": "Codex (LLM)",
+      "method": "로컬 원문 검색 → 근거 기반 작성 → 구조 검증",
+      "review": "제주어 화자 검토 전",
+      "checks": [
+        "원문에 문장 존재",
+        "빈칸 1개",
+        "보기 5개·중복 없음",
+        "정답 포함",
+        "표준어 원문 일치"
+      ]
+    }
+  },
+  {
+    "id": "JEJU-007",
+    "category": "여행",
+    "difficulty": "기초",
+    "sentence": "어드레 감디?",
+    "prompt": "____ 감디?",
+    "standard": "어디로 가느냐?",
+    "answer": "어드레",
+    "meaning": "어디로",
+    "options": [
+      "누게",
+      "무사",
+      "어드레",
+      "어느제",
+      "어떵"
+    ],
+    "hint": "빈칸은 이 문장에서 “어디로”에 해당하는 표현이에요.",
+    "explanation": "원문의 “어드레”은 이 문맥에서 “어디로”이라는 뜻이에요. 표준어 풀이 “어디로 가느냐?”와 비교해 보세요.",
+    "source": {
+      "dataset": "제주특별자치도 생활방언",
+      "id": 21,
+      "title": "어디로 가느냐?",
+      "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=21",
+      "original": "어드레 감디?\n바당에 어멍 안티 감쑤다.\n경 호건, 이거 가정 가라.\n무싱 거꽈?\n느네 어멍, 바당에서 물질 호멍 먹을거여.",
+      "translation": "어디로 가느냐?\n바다에 어머니 한테 갑니다.\n그러면, 이거 가지고 가라.\n무엇입니까?\n너희 어머니, 바다에서 물질하면서 먹을거다.",
+      "audio": "/api/audio/life-21"
+    },
+    "dictionaryMatches": [],
+    "generation": {
+      "author": "Codex (LLM)",
+      "method": "로컬 원문 검색 → 근거 기반 작성 → 구조 검증",
+      "review": "제주어 화자 검토 전",
+      "checks": [
+        "원문에 문장 존재",
+        "빈칸 1개",
+        "보기 5개·중복 없음",
+        "정답 포함",
+        "표준어 원문 일치"
+      ]
+    }
+  },
+  {
+    "id": "JEJU-008",
+    "category": "자연",
+    "difficulty": "기초",
+    "sentence": "바당에 괴기 낚으레 감쑤다.",
+    "prompt": "____에 괴기 낚으레 감쑤다.",
+    "standard": "바다에 고기 잡으로 갑니다.",
+    "answer": "바당",
+    "meaning": "바다",
+    "options": [
+      "괴기",
+      "구덕",
+      "마농",
+      "어멍",
+      "바당"
+    ],
+    "hint": "빈칸은 이 문장에서 “바다”에 해당하는 표현이에요.",
+    "explanation": "원문의 “바당”은 이 문맥에서 “바다”이라는 뜻이에요. 표준어 풀이 “바다에 고기 잡으로 갑니다.”와 비교해 보세요.",
+    "source": {
+      "dataset": "제주특별자치도 생활방언",
+      "id": 70,
+      "title": "어디 갔다 오십니까?",
+      "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=70",
+      "original": "어디 갔단 왐수과?\n밭디 갔다 왐쩌. 어드레 감디?\n바당에 괴기 낚으레 감쑤다.\n절 쎄어서라. 조심호곡 혼저 오래.",
+      "translation": "어디 갔다 오십니까?\n밭에 갔다 온다. 어디에 가느냐?\n바다에 고기 잡으로 갑니다.\n파도가 거세더라. 조심하고 일찍 오너라.",
+      "audio": "/api/audio/life-70"
+    },
+    "dictionaryMatches": [
+      {
+        "word": "바당",
+        "definition": "바다",
+        "url": "https://www.jeju.go.kr/culture/dialect/dictionary.htm?act=view&seq=148"
+      }
+    ],
+    "generation": {
+      "author": "Codex (LLM)",
+      "method": "로컬 원문 검색 → 근거 기반 작성 → 구조 검증",
+      "review": "제주어 화자 검토 전",
+      "checks": [
+        "원문에 문장 존재",
+        "빈칸 1개",
+        "보기 5개·중복 없음",
+        "정답 포함",
+        "표준어 원문 일치"
+      ]
+    }
+  },
+  {
+    "id": "JEJU-009",
+    "category": "자연",
+    "difficulty": "기초",
+    "sentence": "돌도 많고, 보롬도 많고, 비바리도 많고,",
+    "prompt": "돌도 많고, ____도 많고, 비바리도 많고,",
+    "standard": "돌도 많고, 바람도 많고, 처녀도 많고,",
+    "answer": "보롬",
+    "meaning": "바람",
+    "options": [
+      "독새기",
+      "어멍",
+      "보롬",
+      "마농",
+      "괴기"
+    ],
+    "hint": "빈칸은 이 문장에서 “바람”에 해당하는 표현이에요.",
+    "explanation": "원문의 “보롬”은 이 문맥에서 “바람”이라는 뜻이에요. 표준어 풀이 “돌도 많고, 바람도 많고, 처녀도 많고,”와 비교해 보세요.",
+    "source": {
+      "dataset": "제주특별자치도 생활방언",
+      "id": 4,
+      "title": "와서 보세요",
+      "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=4",
+      "original": "고랑은 몰라 마씀.\n제주도에 왕 봐사 알아짐니다. \n돌도 많고, 보롬도 많고, 비바리도 많고,\n유채꽃도 곱드락 호게 피었수다.\n아명 고라도 몰라 마씀. 혼저 왕 봅서.",
+      "translation": "말로 해서는 모릅니다.\n제주도에 와서 보아야 알 수 있습니다. \n돌도 많고, 바람도 많고, 처녀도 많고,\n유채꽃도 아름답게 피었습니다.\n아무리 말해도 모릅니다. 어서 와서 보십시오.",
+      "audio": "/api/audio/life-4"
+    },
+    "dictionaryMatches": [
+      {
+        "word": "보롬",
+        "definition": "보름",
+        "url": "https://www.jeju.go.kr/culture/dialect/dictionary.htm?act=view&seq=313"
+      }
+    ],
+    "generation": {
+      "author": "Codex (LLM)",
+      "method": "로컬 원문 검색 → 근거 기반 작성 → 구조 검증",
+      "review": "제주어 화자 검토 전",
+      "checks": [
+        "원문에 문장 존재",
+        "빈칸 1개",
+        "보기 5개·중복 없음",
+        "정답 포함",
+        "표준어 원문 일치"
+      ]
+    }
+  },
+  {
+    "id": "JEJU-010",
+    "category": "음식",
+    "difficulty": "기초",
+    "sentence": "오늘랑 우리 밭디 마농 심거 줍서.",
+    "prompt": "오늘랑 우리 밭디 ____ 심거 줍서.",
+    "standard": "오늘은 우리 밭에 마늘 심어 주십시오.",
+    "answer": "마농",
+    "meaning": "마늘",
+    "options": [
+      "독새기",
+      "괴기",
+      "어멍",
+      "구덕",
+      "마농"
+    ],
+    "hint": "빈칸은 이 문장에서 “마늘”에 해당하는 표현이에요.",
+    "explanation": "원문의 “마농”은 이 문맥에서 “마늘”이라는 뜻이에요. 표준어 풀이 “오늘은 우리 밭에 마늘 심어 주십시오.”와 비교해 보세요.",
+    "source": {
+      "dataset": "제주특별자치도 생활방언",
+      "id": 54,
+      "title": "조금 있다가 와 주십시오",
+      "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=54",
+      "original": "오늘랑 우리 밭디 마농 심거 줍서.\n경 홉주마! 겐디, 비 옴직 해염쑤다.\n동그레 구름이 시커멍 햄신게 마씀.\n게민, 호꼼 있당 와 줍서",
+      "translation": "오늘은 우리 밭에 마늘 심어 주십시오.\n그렇게 합시다! 그런데, 비가 올 것 같습니다.\n동쪽으로 구름이 시커멓게 되고 있습니다.\n그럼, 조금 있다가 와 주십시오.",
+      "audio": "/api/audio/life-54"
+    },
+    "dictionaryMatches": [
+      {
+        "word": "마농",
+        "definition": "=마눌. 파 따위의 총칭",
+        "url": "https://www.jeju.go.kr/culture/dialect/dictionary.htm?act=view&seq=4319"
+      }
+    ],
+    "generation": {
+      "author": "Codex (LLM)",
+      "method": "로컬 원문 검색 → 근거 기반 작성 → 구조 검증",
+      "review": "제주어 화자 검토 전",
+      "checks": [
+        "원문에 문장 존재",
+        "빈칸 1개",
+        "보기 5개·중복 없음",
+        "정답 포함",
+        "표준어 원문 일치"
+      ]
+    }
+  },
+  {
+    "id": "JEJU-011",
+    "category": "자연",
+    "difficulty": "기초",
+    "sentence": "밸의 밸, 낭이랑 꽃이랑 잘도 곱디다.",
+    "prompt": "밸의 밸, ____이랑 꽃이랑 잘도 곱디다.",
+    "standard": "별의 별, 나무랑 꽃이랑 잘도 아름답습니다.",
+    "answer": "낭",
+    "meaning": "나무",
+    "options": [
+      "구덕",
+      "독새기",
+      "질",
+      "낭",
+      "괴기"
+    ],
+    "hint": "빈칸은 이 문장에서 “나무”에 해당하는 표현이에요.",
+    "explanation": "원문의 “낭”은 이 문맥에서 “나무”이라는 뜻이에요. 표준어 풀이 “별의 별, 나무랑 꽃이랑 잘도 아름답습니다.”와 비교해 보세요.",
+    "source": {
+      "dataset": "제주특별자치도 생활방언",
+      "id": 51,
+      "title": "한림공원에 가보세요?",
+      "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=51",
+      "original": "한림공원에 강 봅디가?\n밸의 밸, 낭이랑 꽃이랑 잘도 곱디다.\n소랑호는 사롬은 꼭 강 봐사 혼댄 마씀.\n경 해사, 소랑호멍 잘 산댄 고릅디다.",
+      "translation": "한림공원에 가서 보았습니까?\n별의 별, 나무랑 꽃이랑 잘도 아름답습니다.\n사랑하는 사람은 꼭 가서 봐야 한다고 합니다.\n그래야, 사랑하면서 잘 산다고 합니다.",
+      "audio": "/api/audio/life-51"
+    },
+    "dictionaryMatches": [
+      {
+        "word": "낭",
+        "definition": "⇒남",
+        "url": "https://www.jeju.go.kr/culture/dialect/dictionary.htm?act=view&seq=2562"
+      }
+    ],
+    "generation": {
+      "author": "Codex (LLM)",
+      "method": "로컬 원문 검색 → 근거 기반 작성 → 구조 검증",
+      "review": "제주어 화자 검토 전",
+      "checks": [
+        "원문에 문장 존재",
+        "빈칸 1개",
+        "보기 5개·중복 없음",
+        "정답 포함",
+        "표준어 원문 일치"
+      ]
+    }
+  },
+  {
+    "id": "JEJU-012",
+    "category": "음식",
+    "difficulty": "기초",
+    "sentence": "아니우다. 게민 솔문 독새기나 호나 줍서.",
+    "prompt": "아니우다. 게민 솔문 ____나 호나 줍서.",
+    "standard": "아닙니다. 그럼 삶은 달걀이나 하나 주십시오.",
+    "answer": "독새기",
+    "meaning": "달걀",
+    "options": [
+      "마농",
+      "괴기",
+      "도새기",
+      "지슬",
+      "독새기"
+    ],
+    "hint": "빈칸은 이 문장에서 “달걀”에 해당하는 표현이에요.",
+    "explanation": "원문의 “독새기”은 이 문맥에서 “달걀”이라는 뜻이에요. 표준어 풀이 “아닙니다. 그럼 삶은 달걀이나 하나 주십시오.”와 비교해 보세요.",
+    "source": {
+      "dataset": "제주특별자치도 생활방언",
+      "id": 64,
+      "title": "삶은 달걀이나 하나 주십시오",
+      "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=64",
+      "original": "돌코롬 혼 거 엇수과?\n게메, 어떵 것이 돌코롬 호코?\n사탕을 주카 마씀?\n아니우다. 게민 솔문 독새기나 호나 줍서.",
+      "translation": "달콤한 거 없습니까?\n글쎄, 어떤 것이 달콤할까?\n사탕을 주면 어떻습니까?\n아닙니다. 그럼 삶은 달걀이나 하나 주십시오.",
+      "audio": "/api/audio/life-64"
+    },
+    "dictionaryMatches": [],
+    "generation": {
+      "author": "Codex (LLM)",
+      "method": "로컬 원문 검색 → 근거 기반 작성 → 구조 검증",
+      "review": "제주어 화자 검토 전",
+      "checks": [
+        "원문에 문장 존재",
+        "빈칸 1개",
+        "보기 5개·중복 없음",
+        "정답 포함",
+        "표준어 원문 일치"
+      ]
+    }
+  },
+  {
+    "id": "JEJU-013",
+    "category": "음식",
+    "difficulty": "기초",
+    "sentence": "바당에 괴기 낚으레 감쑤다.",
+    "prompt": "바당에 ____ 낚으레 감쑤다.",
+    "standard": "바다에 고기 잡으로 갑니다.",
+    "answer": "괴기",
+    "meaning": "고기·생선",
+    "options": [
+      "마농",
+      "괴기",
+      "독새기",
+      "낭",
+      "구덕"
+    ],
+    "hint": "빈칸은 이 문장에서 “고기·생선”에 해당하는 표현이에요.",
+    "explanation": "원문의 “괴기”은 이 문맥에서 “고기·생선”이라는 뜻이에요. 표준어 풀이 “바다에 고기 잡으로 갑니다.”와 비교해 보세요.",
+    "source": {
+      "dataset": "제주특별자치도 생활방언",
+      "id": 70,
+      "title": "어디 갔다 오십니까?",
+      "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=70",
+      "original": "어디 갔단 왐수과?\n밭디 갔다 왐쩌. 어드레 감디?\n바당에 괴기 낚으레 감쑤다.\n절 쎄어서라. 조심호곡 혼저 오래.",
+      "translation": "어디 갔다 오십니까?\n밭에 갔다 온다. 어디에 가느냐?\n바다에 고기 잡으로 갑니다.\n파도가 거세더라. 조심하고 일찍 오너라.",
+      "audio": "/api/audio/life-70"
+    },
+    "dictionaryMatches": [
+      {
+        "word": "괴기",
+        "definition": "고기(肉 . 魚)",
+        "url": "https://www.jeju.go.kr/culture/dialect/dictionary.htm?act=view&seq=3423"
+      },
+      {
+        "word": "괴기",
+        "definition": "고기. 생선",
+        "url": "https://www.jeju.go.kr/culture/dialect/dictionary.htm?act=view&seq=2351"
+      }
+    ],
+    "generation": {
+      "author": "Codex (LLM)",
+      "method": "로컬 원문 검색 → 근거 기반 작성 → 구조 검증",
+      "review": "제주어 화자 검토 전",
+      "checks": [
+        "원문에 문장 존재",
+        "빈칸 1개",
+        "보기 5개·중복 없음",
+        "정답 포함",
+        "표준어 원문 일치"
+      ]
+    }
+  },
+  {
+    "id": "JEJU-014",
+    "category": "여행",
+    "difficulty": "기초",
+    "sentence": "기여. 아는 질도 들으멍 가라.",
+    "prompt": "기여. 아는 ____도 들으멍 가라.",
+    "standard": "그래. 아는 길도 물으면서 가라.",
+    "answer": "질",
+    "meaning": "길",
+    "options": [
+      "질",
+      "낭",
+      "보롬",
+      "바당",
+      "마농"
+    ],
+    "hint": "빈칸은 이 문장에서 “길”에 해당하는 표현이에요.",
+    "explanation": "원문의 “질”은 이 문맥에서 “길”이라는 뜻이에요. 표준어 풀이 “그래. 아는 길도 물으면서 가라.”와 비교해 보세요.",
+    "source": {
+      "dataset": "제주특별자치도 생활방언",
+      "id": 71,
+      "title": "아는 길도 물으면서 가라",
+      "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=71",
+      "original": "이젠, 니 인생은 니가 알앙 가야 혼다.\n알았수다. 잘 살크메 걱정 맙서.\n기여. 아는 질도 들으멍 가라.\n조심하멍 가는 질은 펜안혼다.",
+      "translation": "이제는, 너의 인생은 네가 알아서 가야 한다.\n알았습니다. 잘 살겠으니 걱정 마십시오.\n그래. 아는 길도 물으면서 가라.\n조심하면서 가는 길은 편안하다.",
+      "audio": "/api/audio/life-71"
+    },
+    "dictionaryMatches": [
+      {
+        "word": "질",
+        "definition": "길",
+        "url": "https://www.jeju.go.kr/culture/dialect/dictionary.htm?act=view&seq=5525"
+      },
+      {
+        "word": "질",
+        "definition": "길",
+        "url": "https://www.jeju.go.kr/culture/dialect/dictionary.htm?act=view&seq=215"
+      }
+    ],
+    "generation": {
+      "author": "Codex (LLM)",
+      "method": "로컬 원문 검색 → 근거 기반 작성 → 구조 검증",
+      "review": "제주어 화자 검토 전",
+      "checks": [
+        "원문에 문장 존재",
+        "빈칸 1개",
+        "보기 5개·중복 없음",
+        "정답 포함",
+        "표준어 원문 일치"
+      ]
+    }
+  },
+  {
+    "id": "JEJU-015",
+    "category": "일상",
+    "difficulty": "기초",
+    "sentence": "먹을 것도 촘 하영 있저.",
+    "prompt": "먹을 것도 촘 ____ 있저.",
+    "standard": "먹을 것도 참 많이 있네.",
+    "answer": "하영",
+    "meaning": "많이",
+    "options": [
+      "솔째기",
+      "호꼼",
+      "촌촌이",
+      "혼저",
+      "하영"
+    ],
+    "hint": "빈칸은 이 문장에서 “많이”에 해당하는 표현이에요.",
+    "explanation": "원문의 “하영”은 이 문맥에서 “많이”이라는 뜻이에요. 표준어 풀이 “먹을 것도 참 많이 있네.”와 비교해 보세요.",
+    "source": {
+      "dataset": "제주특별자치도 생활방언",
+      "id": 44,
+      "title": "무엇을 먹을까?",
+      "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=44",
+      "original": "무신 걸 먹으코?\n게메 양, 제주도에만 이신 거 먹게 마씀.\n그젱기에, 보말에, 옥돔생성,\n또 있수다. 모멀 범벅에 자리젯!\n먹을 것도 촘 하영 있저.",
+      "translation": "무엇을 먹을까?\n글쎄요, 제주도에만 있는 것을 먹읍시다.\n소라에, 보말(조그만 바다 소라)에, 옥돔생선,\n또 있어요. 메밀 범벅에 자리젓갈!\n먹을 것도 참 많이 있네.",
+      "audio": "/api/audio/life-44"
+    },
+    "dictionaryMatches": [
+      {
+        "word": "하영",
+        "definition": "많이.",
+        "url": "https://www.jeju.go.kr/culture/dialect/dictionary.htm?act=view&seq=7496"
+      }
+    ],
+    "generation": {
+      "author": "Codex (LLM)",
+      "method": "로컬 원문 검색 → 근거 기반 작성 → 구조 검증",
+      "review": "제주어 화자 검토 전",
+      "checks": [
+        "원문에 문장 존재",
+        "빈칸 1개",
+        "보기 5개·중복 없음",
+        "정답 포함",
+        "표준어 원문 일치"
+      ]
+    }
+  },
+  {
+    "id": "JEJU-016",
+    "category": "자연",
+    "difficulty": "기초",
+    "sentence": "산이영 바당이영 몬딱 좋은게 마씀.",
+    "prompt": "산이영 바당이영 ____ 좋은게 마씀.",
+    "standard": "산이랑 바다랑 모두가 좋습니다.",
+    "answer": "몬딱",
+    "meaning": "모두",
+    "options": [
+      "혼저",
+      "몬딱",
+      "솔째기",
+      "호꼼",
+      "촌촌이"
+    ],
+    "hint": "빈칸은 이 문장에서 “모두”에 해당하는 표현이에요.",
+    "explanation": "원문의 “몬딱”은 이 문맥에서 “모두”이라는 뜻이에요. 표준어 풀이 “산이랑 바다랑 모두가 좋습니다.”와 비교해 보세요.",
+    "source": {
+      "dataset": "제주특별자치도 생활방언",
+      "id": 2,
+      "title": "제주도 인사",
+      "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=2",
+      "original": "펜안 하우꽈? 제주도에 오난 어떵 하우꽈?\n촘말로 좋수다. 공기도 맑고,\n산이영 바당이영 몬딱 좋은게 마씀.\n서울에 갈 때랑 하영 담앙 갑서.\n게메, 양. 경 해시민 얼마나 좋코 마씀?",
+      "translation": "편안(안녕)하십니까? 제주도에 오니 어떠하십니까?\n정말로 좋습니다. 공기도 맑고,\n산이랑 바다랑 모두가 좋습니다.\n서울에 갈 때는 많이 담아서 가십시오.\n그러게 말입니다. 그렇게 했으면 얼마나 좋겠습니까?",
+      "audio": "/api/audio/life-2"
+    },
+    "dictionaryMatches": [],
+    "generation": {
+      "author": "Codex (LLM)",
+      "method": "로컬 원문 검색 → 근거 기반 작성 → 구조 검증",
+      "review": "제주어 화자 검토 전",
+      "checks": [
+        "원문에 문장 존재",
+        "빈칸 1개",
+        "보기 5개·중복 없음",
+        "정답 포함",
+        "표준어 원문 일치"
+      ]
+    }
+  },
+  {
+    "id": "JEJU-017",
+    "category": "일상",
+    "difficulty": "도전",
+    "sentence": "호꼼만 싸게 안되카 마씀?",
+    "prompt": "____만 싸게 안되카 마씀?",
+    "standard": "조금만 싸게 안될까요?",
+    "answer": "호꼼",
+    "meaning": "조금",
+    "options": [
+      "호꼼",
+      "혼저",
+      "몬딱",
+      "하영",
+      "촌촌이"
+    ],
+    "hint": "빈칸은 이 문장에서 “조금”에 해당하는 표현이에요.",
+    "explanation": "원문의 “호꼼”은 이 문맥에서 “조금”이라는 뜻이에요. 표준어 풀이 “조금만 싸게 안될까요?”와 비교해 보세요.",
+    "source": {
+      "dataset": "제주특별자치도 생활방언",
+      "id": 59,
+      "title": "좀 실례합니다",
+      "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=59",
+      "original": "호꼼 미안하우다. 이게 얼마꽈?\n오천원 마씀.\n호꼼만 싸게 안되카 마씀?\n경 해사, 다시 올 거 아니꽈?",
+      "translation": "좀 실례합니다. 이 것이 얼마입니까?\n오천원 입니다.\n조금만 싸게 안될까요?\n그렇게 해야, 다시 올 거 아닙니까?",
+      "audio": "/api/audio/life-59"
+    },
+    "dictionaryMatches": [],
+    "generation": {
+      "author": "Codex (LLM)",
+      "method": "로컬 원문 검색 → 근거 기반 작성 → 구조 검증",
+      "review": "제주어 화자 검토 전",
+      "checks": [
+        "원문에 문장 존재",
+        "빈칸 1개",
+        "보기 5개·중복 없음",
+        "정답 포함",
+        "표준어 원문 일치"
+      ]
+    }
+  },
+  {
+    "id": "JEJU-018",
+    "category": "일상",
+    "difficulty": "도전",
+    "sentence": "와리지 말앙, 촌촌이 고라 보게.",
+    "prompt": "와리지 말앙, ____ 고라 보게.",
+    "standard": "너무 서두르지 말고, 천천히 말해 보아라.",
+    "answer": "촌촌이",
+    "meaning": "천천히",
+    "options": [
+      "몬딱",
+      "혼저",
+      "호꼼",
+      "하영",
+      "촌촌이"
+    ],
+    "hint": "빈칸은 이 문장에서 “천천히”에 해당하는 표현이에요.",
+    "explanation": "원문의 “촌촌이”은 이 문맥에서 “천천히”이라는 뜻이에요. 표준어 풀이 “너무 서두르지 말고, 천천히 말해 보아라.”와 비교해 보세요.",
+    "source": {
+      "dataset": "제주특별자치도 생활방언",
+      "id": 40,
+      "title": "너무 서두르지 말고, 천천히 말해 보아라",
+      "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=40",
+      "original": "아이구 게, 큰일 났수다.\n무사, 경 들락켬시니?\n와리지 말앙, 촌촌이 고라 보게.\n경호난 양, 영 호곡, 정 호곡 했수게.\n게난, 욕심 내멍 살민 경 혼다.",
+      "translation": "아이구(강함), 큰일 났습니다.\n왜, 그렇게 들락키느냐?\n너무 서두르지 말고, 천천히 말해 보아라.\n그러니까요, 이렇게 하고, 저렇게 하고 했습니다.\n그러니까, 욕심 내면서 살면 그렇게 된다.",
+      "audio": "/api/audio/life-40"
+    },
+    "dictionaryMatches": [],
+    "generation": {
+      "author": "Codex (LLM)",
+      "method": "로컬 원문 검색 → 근거 기반 작성 → 구조 검증",
+      "review": "제주어 화자 검토 전",
+      "checks": [
+        "원문에 문장 존재",
+        "빈칸 1개",
+        "보기 5개·중복 없음",
+        "정답 포함",
+        "표준어 원문 일치"
+      ]
+    }
+  },
+  {
+    "id": "JEJU-019",
+    "category": "일상",
+    "difficulty": "도전",
+    "sentence": "여기, 불 조끄띠 안즙서.",
+    "prompt": "여기, 불 ____ 안즙서.",
+    "standard": "여기, 불 옆으로 앉으십시오.",
+    "answer": "조끄띠",
+    "meaning": "옆에·곁에",
+    "options": [
+      "촌촌이",
+      "어드레",
+      "조끄띠",
+      "솔째기",
+      "안트레"
+    ],
+    "hint": "빈칸은 이 문장에서 “옆에·곁에”에 해당하는 표현이에요.",
+    "explanation": "원문의 “조끄띠”은 이 문맥에서 “옆에·곁에”이라는 뜻이에요. 표준어 풀이 “여기, 불 옆으로 앉으십시오.”와 비교해 보세요.",
+    "source": {
+      "dataset": "제주특별자치도 생활방언",
+      "id": 61,
+      "title": "놀다가 가십시오",
+      "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=61",
+      "original": "들어 왕, 놀당 갑서.\n경 호카 마씀.\n여기, 불 조끄띠 안즙서. 똣똣하우다.\n촘말, 맨도롱혼 게 좋수다.",
+      "translation": "들어 와서, 놀다가 가십시오.\n그렇게 할까요.\n여기, 불 옆으로 앉으십시오. 따뜻합니다.\n정말, 따뜻한 것이 좋습니다.",
+      "audio": "/api/audio/life-61"
+    },
+    "dictionaryMatches": [],
+    "generation": {
+      "author": "Codex (LLM)",
+      "method": "로컬 원문 검색 → 근거 기반 작성 → 구조 검증",
+      "review": "제주어 화자 검토 전",
+      "checks": [
+        "원문에 문장 존재",
+        "빈칸 1개",
+        "보기 5개·중복 없음",
+        "정답 포함",
+        "표준어 원문 일치"
+      ]
+    }
+  },
+  {
+    "id": "JEJU-020",
+    "category": "인사",
+    "difficulty": "도전",
+    "sentence": "안트레 들어 왕, 조녁 먹엉 갑서.",
+    "prompt": "____ 들어 왕, 조녁 먹엉 갑서.",
+    "standard": "안으로 들어 오셔서, 저녁식사 하고 가십시오.",
+    "answer": "안트레",
+    "meaning": "안으로",
+    "options": [
+      "안트레",
+      "어드레",
+      "조끄띠",
+      "혼저",
+      "촌촌이"
+    ],
+    "hint": "빈칸은 이 문장에서 “안으로”에 해당하는 표현이에요.",
+    "explanation": "원문의 “안트레”은 이 문맥에서 “안으로”이라는 뜻이에요. 표준어 풀이 “안으로 들어 오셔서, 저녁식사 하고 가십시오.”와 비교해 보세요.",
+    "source": {
+      "dataset": "제주특별자치도 생활방언",
+      "id": 33,
+      "title": "일 하려고 하니 수고 했습니다",
+      "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=33",
+      "original": "과랑 과랑혼 벳디\n일 호젠 호난 속았수다.\n속을 거 있수과? 호꼼, 똠은 났수다만,\n안트레 들어 왕, 조녁 먹엉 갑서.\n경 호카 마씀.",
+      "translation": "쨍쨍한 햇볕속에\n일 하려고 하니 수고 했습니다.\n수고 할 거 있습니까? 조금, 땀은 났습니다만,\n안으로 들어 오셔서, 저녁식사 하고 가십시오.\n그렇게 할까요.",
+      "audio": "/api/audio/life-33"
+    },
+    "dictionaryMatches": [],
+    "generation": {
+      "author": "Codex (LLM)",
+      "method": "로컬 원문 검색 → 근거 기반 작성 → 구조 검증",
+      "review": "제주어 화자 검토 전",
+      "checks": [
+        "원문에 문장 존재",
+        "빈칸 1개",
+        "보기 5개·중복 없음",
+        "정답 포함",
+        "표준어 원문 일치"
+      ]
+    }
+  },
+  {
+    "id": "JEJU-021",
+    "category": "음식",
+    "difficulty": "도전",
+    "sentence": "안트레 들어 왕, 조녁 먹엉 갑서.",
+    "prompt": "안트레 들어 왕, ____ 먹엉 갑서.",
+    "standard": "안으로 들어 오셔서, 저녁식사 하고 가십시오.",
+    "answer": "조녁",
+    "meaning": "저녁식사",
+    "options": [
+      "아방",
+      "낭",
+      "조녁",
+      "구덕",
+      "어멍"
+    ],
+    "hint": "빈칸은 이 문장에서 “저녁식사”에 해당하는 표현이에요.",
+    "explanation": "원문의 “조녁”은 이 문맥에서 “저녁식사”이라는 뜻이에요. 표준어 풀이 “안으로 들어 오셔서, 저녁식사 하고 가십시오.”와 비교해 보세요.",
+    "source": {
+      "dataset": "제주특별자치도 생활방언",
+      "id": 33,
+      "title": "일 하려고 하니 수고 했습니다",
+      "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=33",
+      "original": "과랑 과랑혼 벳디\n일 호젠 호난 속았수다.\n속을 거 있수과? 호꼼, 똠은 났수다만,\n안트레 들어 왕, 조녁 먹엉 갑서.\n경 호카 마씀.",
+      "translation": "쨍쨍한 햇볕속에\n일 하려고 하니 수고 했습니다.\n수고 할 거 있습니까? 조금, 땀은 났습니다만,\n안으로 들어 오셔서, 저녁식사 하고 가십시오.\n그렇게 할까요.",
+      "audio": "/api/audio/life-33"
+    },
+    "dictionaryMatches": [],
+    "generation": {
+      "author": "Codex (LLM)",
+      "method": "로컬 원문 검색 → 근거 기반 작성 → 구조 검증",
+      "review": "제주어 화자 검토 전",
+      "checks": [
+        "원문에 문장 존재",
+        "빈칸 1개",
+        "보기 5개·중복 없음",
+        "정답 포함",
+        "표준어 원문 일치"
+      ]
+    }
+  },
+  {
+    "id": "JEJU-022",
+    "category": "일상",
+    "difficulty": "도전",
+    "sentence": "소랑 홀 땐 솔째기 골라.",
+    "prompt": "소랑 홀 땐 ____ 골라.",
+    "standard": "사랑 할 때는 살그머니 말해라.",
+    "answer": "솔째기",
+    "meaning": "살그머니",
+    "options": [
+      "솔째기",
+      "혼저",
+      "호꼼",
+      "몬딱",
+      "하영"
+    ],
+    "hint": "빈칸은 이 문장에서 “살그머니”에 해당하는 표현이에요.",
+    "explanation": "원문의 “솔째기”은 이 문맥에서 “살그머니”이라는 뜻이에요. 표준어 풀이 “사랑 할 때는 살그머니 말해라.”와 비교해 보세요.",
+    "source": {
+      "dataset": "제주특별자치도 생활방언",
+      "id": 56,
+      "title": "살그머니 말해라",
+      "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=56",
+      "original": "소랑 홀 땐 솔째기 골라.\n누게 들엉 웃나.\n아무도 몰르게\n느영 나영만 솔째기 호게.",
+      "translation": "사랑 할 때는 살그머니 말해라.\n누가 들으면 웃는다.\n아무도 모르게\n너하고 나하고만 살그머니 하자.\n( ※ 솔째기 : 살그머니 )",
+      "audio": "/api/audio/life-56"
+    },
+    "dictionaryMatches": [],
+    "generation": {
+      "author": "Codex (LLM)",
+      "method": "로컬 원문 검색 → 근거 기반 작성 → 구조 검증",
+      "review": "제주어 화자 검토 전",
+      "checks": [
+        "원문에 문장 존재",
+        "빈칸 1개",
+        "보기 5개·중복 없음",
+        "정답 포함",
+        "표준어 원문 일치"
+      ]
+    }
+  },
+  {
+    "id": "JEJU-023",
+    "category": "인사",
+    "difficulty": "기초",
+    "sentence": "어느제 옵디가?",
+    "prompt": "____ 옵디가?",
+    "standard": "언제 오셨습니까?",
+    "answer": "어느제",
+    "meaning": "언제",
+    "options": [
+      "어떵",
+      "어드레",
+      "어느제",
+      "누게",
+      "무사"
+    ],
+    "hint": "빈칸은 이 문장에서 “언제”에 해당하는 표현이에요.",
+    "explanation": "원문의 “어느제”은 이 문맥에서 “언제”이라는 뜻이에요. 표준어 풀이 “언제 오셨습니까?”와 비교해 보세요.",
+    "source": {
+      "dataset": "제주특별자치도 생활방언",
+      "id": 87,
+      "title": "어떻게 살고 있습니까?",
+      "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=87",
+      "original": "어느제 옵디가?\n혼 사나흘 됐수다.\n다들 펜안 했수과?\n어떵 살아 점쑤과?",
+      "translation": "언제 오셨습니까?\n한 사나흘 되었습니다.\n모두 편안 했습니까?\n어떻게 살고 있습니까?\n(※오랜만에 서로 만나 인사하는 말들)",
+      "audio": "/api/audio/life-87"
+    },
+    "dictionaryMatches": [],
+    "generation": {
+      "author": "Codex (LLM)",
+      "method": "로컬 원문 검색 → 근거 기반 작성 → 구조 검증",
+      "review": "제주어 화자 검토 전",
+      "checks": [
+        "원문에 문장 존재",
+        "빈칸 1개",
+        "보기 5개·중복 없음",
+        "정답 포함",
+        "표준어 원문 일치"
+      ]
+    }
+  },
+  {
+    "id": "JEJU-024",
+    "category": "일상",
+    "difficulty": "기초",
+    "sentence": "무싱거 하미꽈?",
+    "prompt": "____ 하미꽈?",
+    "standard": "무엇을 하십니까?",
+    "answer": "무싱거",
+    "meaning": "무엇",
+    "options": [
+      "어드레",
+      "누게",
+      "무싱거",
+      "어느제",
+      "무사"
+    ],
+    "hint": "빈칸은 이 문장에서 “무엇”에 해당하는 표현이에요.",
+    "explanation": "원문의 “무싱거”은 이 문맥에서 “무엇”이라는 뜻이에요. 표준어 풀이 “무엇을 하십니까?”와 비교해 보세요.",
+    "source": {
+      "dataset": "제주특별자치도 생활방언",
+      "id": 72,
+      "title": "무엇을 하십니까?",
+      "url": "https://www.jeju.go.kr/culture/dialect/lifeDialect.htm?act=view&seq=72",
+      "original": "무싱거 하미꽈? 혼저 옵서게.\n기여 알았저. 혼저 글라.\n푸더지질랑 말앙 옵서.\n돌, 조심호곡 고짝 옵세.",
+      "translation": "무엇을 하십니까? 어서 오십시오.\n그래 알았다. 어서 가자.\n쓰러지지는 말고 오십시오.\n돌, 조심하고 곧장 오십시오.",
+      "audio": "/api/audio/life-72"
+    },
+    "dictionaryMatches": [],
+    "generation": {
+      "author": "Codex (LLM)",
+      "method": "로컬 원문 검색 → 근거 기반 작성 → 구조 검증",
+      "review": "제주어 화자 검토 전",
+      "checks": [
+        "원문에 문장 존재",
+        "빈칸 1개",
+        "보기 5개·중복 없음",
+        "정답 포함",
+        "표준어 원문 일치"
+      ]
+    }
+  }
+]
