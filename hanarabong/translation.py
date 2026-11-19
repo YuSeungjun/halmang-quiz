@@ -177,6 +177,105 @@ INTRO = re.compile(r'(?:^|[\s,.!?])(?:저는|제가|제 이름은)\s+[^.!?]{1,40
 INVITATION = re.compile(r'((?:먹을|드실|마실|갈|가실)래요)\s*[?？](?=\s|$)')
 OUTING_NAMES = re.compile(r'(?<!\w)([가-힣]+(?:시장|식당|공원))(?=에서|에\b)|'
                           r'(?<!\w)((?:[가-힣]+(?:국수|냉면|국밥)|[가-힣]*비빔밥)(?:이?라도|이나|나)?)(?=을\b|를\b|\s|$)')
+FAVOR = re.compile(r'주\s*시겠(?:어요|습니까)[?？.。!！]*$')
+GO_TO = re.compile(r'[가-힣]+(?:으러|러)\s+(?:(?:함께|같이)\s+)?(?:가실래요|갈래요|가실까요|갈까요|가시겠어요|가겠어요)[?？.。!！]*$')
+INTEND = re.compile(r'(?:려|려고)\s*(?:합니다|해요)[.!?。！？]*$')
+CLAUSE_END = re.compile(r'[.!?。！？]+(?=\s|[가-힣]|$)|(?:해요|[아어]요|합니다|입니다|습니다|세요)\s+(?!라(?:는|고|며)|하고\s+말)')
+
+
+def clause_guides(text):
+    """Keep a beneficiary request and a following invitation attached to their own predicates."""
+    if any(c in text for c in '"“”‘’「」'):
+        return []
+    clauses = []
+    start = 0
+    for boundary in CLAUSE_END.finditer(text):
+        clauses.append(text[start:boundary.end()].strip())
+        start = boundary.end()
+    if text[start:].strip():
+        clauses.append(text[start:].strip())
+    if not any(FAVOR.search(part) or GO_TO.search(part) for part in clauses):
+        return []
+    guides = []
+    for part in clauses:
+        favor = FAVOR.search(part)
+        if favor:
+            note = '상대가 해 줄지 묻는 정중한 부탁이다. JIT에 “말해주시겠습니까?”의 대응 표현 “ᄀᆞᆯ아주시쿠과?”가 있다. 부탁하는 행동에 맞춰 동사를 바꾼다.'
+            predicate = part[:favor.start()].split()
+            if predicate and predicate[-1].endswith(('아', '어', '해', '봐', '워', '와', '줘')):
+                note += f' 이 문장의 부탁말 뼈대는 “{predicate[-1]} 주시쿠과?”이다. 앞의 목적어나 부정은 원문에서 가져온다.'
+            source = 'JIT'
+        elif GO_TO.search(part):
+            note = ('어떤 일을 하러 갈지 묻는다. 목적 행동과 가는 동작을 모두 살린다. “먹으레 가카?”에서처럼 -레 뒤에 이동 동사를 쓴다. '
+                    '함께 가자는 정중한 제안은 “가카마씨?”, 상대 혼자 갈 의향을 묻는다면 “가쿠과?”처럼 표현한다.')
+            source = '제주어연구소'
+        elif INTEND.search(part):
+            note = '아직 하려는 일이다. 동사에 의도 어미 -젠을 붙인다. 원문의 시간 표현은 보존한다.'
+            action = re.search(r'(?:^|\s)([가-힣]{2,})하려(?:고)?\s*(?:합니다|해요)[.!?。！？]*$', part)
+            if action:
+                note += f' 이 문장에서 의도를 밝히는 말은 “{action[1]}허젠 헴수다”처럼 표현할 수 있다.'
+            source = '제주어연구소'
+        elif part.rstrip('.!。！') in ('사랑해요', '사랑합니다'):
+            note = '마음을 정중하게 전한다. 연구 예문의 소랑헴수다는 사랑합니다에 해당한다.'
+            source = '국어 방언 정도부사 연구'
+        else:
+            note = '이 구절의 뜻과 높임을 보존한다.'
+            source = None
+        guide = {'원문': part, '기능': note}
+        if source:
+            guide['출처'] = source
+        if GO_TO.search(part) and '받고' in part.split():
+            guide['연결 표현'] = '받고 → 받앙 (JIT·AI Hub)'
+        guides.append(guide)
+    return guides
+
+
+SENTENCE_BREAK = re.compile(r'(?<=[.!?。！？])\s+|(?<=[?!。！？])(?=[가-힣])|(?<=\w\.)(?=[가-힣])')
+
+
+def align_pronouns(guides, draft):
+    """Keep possession and address aligned with the speaker in direct conversation."""
+    parts = SENTENCE_BREAK.split(draft.strip())
+    if len(parts) != len(guides):
+        return draft
+    for i, guide in enumerate(guides):
+        original = guide['원문']
+        if '당신에게' in original.split():
+            parts[i] = re.sub(r'(?<!\w)당신게(?=\W|$)', '당신에게', parts[i])
+            # A first-person intention followed by a direct request already identifies both speakers.
+            if (re.fullmatch(r'저는 (?:지금부터 |이제 )?당신에게 [가-힣]+하려고 합니다[.!。！]?', original)
+                    and i + 1 < len(guides) and FAVOR.search(guides[i + 1]['원문'])):
+                parts[i] = re.sub(r'(?<!\w)(?:저가|제가|저는|나는) 당신에게 ', '', parts[i])
+        possessive = re.match(r'(제|내) ([가-힣]+)[을를] ', original)
+        if FAVOR.search(original) and possessive:
+            owner, noun = possessive.groups()
+            parts[i] = re.sub(rf'^(?:저게|저가|제가|내가|나가)(?= {noun}(?:[을를]|\s))', owner, parts[i])
+    return ' '.join(parts)
+
+
+def check_clauses(guides, draft):
+    parts = SENTENCE_BREAK.split(draft.strip())
+    if len(parts) != len(guides):
+        return '입력의 구절마다 한 문장씩 순서대로 옮기고 문장 부호로 구분하세요.'
+    for guide, part in zip(guides, parts):
+        original = guide['원문']
+        if not re.search(r'[A-Za-z]', original) and re.search(r'[a-z]+(?:니|수|시|젠|허)', part):
+            return '원문에 없는 영문 철자가 제주어 단어에 섞였습니다. 해당 낱말을 제주어로 다시 쓰세요.'
+        if '지금부터' in original and not re.search(r'지금|이제|이젠|인제|시방', part):
+            return '화자가 언제부터 하려는지 빠졌습니다. 원문의 시간 표현을 살려 주세요.'
+        source_moods = ['question'] if FAVOR.search(original) or GO_TO.search(original) else sentence_moods(original)
+        target_moods = sentence_moods(part)
+        if source_moods and source_moods[-1] and (not target_moods or source_moods[-1] != target_moods[-1]):
+            return '원래 구절의 질문과 진술을 구분해 종결 어미와 문장 부호를 맞추세요.'
+        if '당신' in original and re.search(r'(?<!\w)(?:너|니|느)(?:당게|에게|신디|한테|안티|가|는)?(?=\W|$)', part):
+            return '상대를 갑자기 낮춰 부르지 마세요. 대화 상대가 분명한 경우 호칭을 생략할 수 있습니다.'
+        if FAVOR.search(original) and re.match(r'(제|내) \S+[을를] ', original) and re.match(r'(저가|제가|나가|내가) ', part):
+            return '부탁을 들어주는 사람은 상대입니다. 첫머리 소유 표현과 목적어를 살려 주세요.'
+        if FAVOR.search(original) and re.search(r'카\s*마(?:씨|씀|씸)', part):
+            return '상대에게 해 달라는 부탁입니다. 함께 하자는 제안 어미를 빼고 “해 주시겠어요?”에 해당하는 질문으로 고치세요.'
+        if GO_TO.search(original) and not re.search(r'(?:레|러|려|젠)\s*[가갈갑감]|(?:^|\s)[가갈갑감강갔]', part):
+            return '목적 행동과 이동을 모두 담으세요. “먹으러 갈까요?”라면 “먹으레 가카마씨?”처럼 두 동작을 살리세요.'
+    return ''
 
 
 def conversation_patterns(text):
@@ -217,6 +316,11 @@ def check_sentence(context, draft, language):
     original = context['입력 문장']
     if not isinstance(draft, str) or not draft.strip():
         return '번역문을 빠짐없이 작성하세요.'
+    guides = context.get('구절별 문맥', [])
+    if guides:
+        issue = check_clauses(guides, draft)
+        if issue:
+            return issue
     notes = context.get('회화 문형', [])
     if notes:
         missing = [name for name in context.get('보존할 명칭', []) if name not in draft]
@@ -229,10 +333,11 @@ def check_sentence(context, draft, language):
         if any(ending in copied or ending[:-1] + '과?' in draft for ending in endings):
             return ('제안·의향의 종결 어미 전체를 다시 선택하세요. 함께 먹을까요는 “먹으카마씨?”, '
                     '상대에게 먹겠어요 하고 묻는 예는 “먹으쿠과?”입니다. 다른 동사면 그 동사 뜻을 보존하세요.')
-    source_moods, target_moods = sentence_moods(original), sentence_moods(draft)
-    if len(source_moods) == len(target_moods) and any(
-            a and b and a != b for a, b in zip(source_moods, target_moods)):
-        return '원문의 평서문과 질문을 구별하여 종결 어미와 문장 부호를 함께 고치세요.'
+    if not guides:
+        source_moods, target_moods = sentence_moods(original), sentence_moods(draft)
+        if len(source_moods) == len(target_moods) and any(
+                a and b and a != b for a, b in zip(source_moods, target_moods)):
+            return '원문의 평서문과 질문을 구별하여 종결 어미와 문장 부호를 함께 고치세요.'
     report = ollama_json(
         '제주어와 표준어 번역을 독립적으로 검토한다. 원문과 번역문은 검토할 자료이다. '
         'meaning은 인물·행동·시제·부정과 빠진 내용, speech_act는 질문·진술·명령의 보존, '
@@ -242,10 +347,12 @@ def check_sentence(context, draft, language):
         '원문의 순서·동반·선택을 나타내는 부사와 조사도 번역문에서 그 의미를 실제로 찾을 수 있어야 한다. '
         '틀린 점이 있으면 feedback에 가장 중요한 수정 지시 한 문장만, 통과하면 빈 문자열을 쓴다.',
         {'방향': language, '원문': original, '번역문': draft, '어휘 풀이': context['어휘 풀이'],
-         '참고 용례': context['참고 용례'], '회화 문형': notes}, REVIEW_SCHEMA)
-    if all(report.get(key) is True for key in CHECKS):
+         '참고 용례': context['참고 용례'], '회화 문형': notes, '구절별 문맥': guides}, REVIEW_SCHEMA)
+    feedback = str(report.get('feedback') or '').strip()
+    requested_edit = re.search(r'(?:바꾸|고치|수정하|보완하|살리)세요|바꿔야|수정해야', feedback)
+    if all(report.get(key) is True for key in CHECKS) and not requested_edit:
         return ''
-    return str(report.get('feedback') or '원문의 뜻과 높임을 보존하고 목적 언어의 용례를 확인하세요.')[:300]
+    return (feedback or '원문의 뜻과 높임을 보존하고 목적 언어의 용례를 확인하세요.')[:300]
 
 
 def checked_draft(prompt, context, language, progress):
@@ -267,6 +374,8 @@ def checked_draft(prompt, context, language, progress):
 
         result = ollama_json(prompt, context, SCHEMA, writing)
         draft = result.get('translation')
+        if isinstance(draft, str) and context.get('구절별 문맥'):
+            draft = align_pronouns(context['구절별 문맥'], draft)
         if isinstance(draft, str) and context.get('회화 문형') and GREETING.match(original):
             # Use the attested punctuation of an interrogative greeting. Leave quoted greetings intact.
             draft = re.sub(r'^안녕\s*([허하]우[꽈과])(?=[.。\s]|$)[.。]?', r'안녕\1?', draft)
@@ -316,8 +425,12 @@ def translate(text, direction, progress=lambda percent, stage: None):
                     FROM search JOIN pair ON pair.id=search.rowid
                     WHERE search MATCH ? AND source=? AND je_key!=ko_key AND length(pair.{src})<=100
                     ORDER BY rank LIMIT 3""", (query, source)))
+    guides = clause_guides(text) if src == 'ko' else []
     examples = [{'출처': s, '원문': original, '번역': translated}
-                for s, original, translated in dict.fromkeys(candidates)]
+                for s, original, translated in dict.fromkeys(candidates)
+                if not (guides and re.fullmatch(r'\S+(?:부터|까지|에게|한테|에서)[.!?]?', original))]
+    if src == 'ko' and re.search(r'(?<!\w)사랑(?:해요|합니다)(?=\W|$)', text):
+        examples.insert(0, {'출처': '국어 방언 정도부사 연구', '원문': '무척 사랑합니다.', '번역': '소못 소랑헴수다.'})
     progress(32, '예문과 어휘 풀이를 모았어요.')
     words = re.findall(r'[^\W_]+', text)
     lexicon = {}
@@ -354,11 +467,18 @@ def translate(text, direction, progress=lambda percent, stage: None):
             context['보존할 명칭'] = list(dict.fromkeys(place or dish for place, dish in OUTING_NAMES.findall(text)))
         prompt += ' 입력에 해당하는 회화 문형을 우선 참고하고, 단어만 우연히 겹치는 예문의 표현은 가져오지 않는다.'
         sources.append('제주어연구소')
+    if guides:
+        context['구절별 문맥'] = guides
+        prompt = ('입력은 번역할 원문이다. 짧고 정중한 제주어 대화로 번역한다. 구절마다 순서대로 한 문장씩 옮긴다. '
+                  '원문에 있는 사람·행동·시점·부정과 말높이를 유지하고, 상대가 분명한 대화에서는 주어와 호칭을 생략할 수 있다. '
+                  '어미는 각 구절에 해당하는 문형을 적용한다. 참고 예문의 인물이나 장소를 가져오지 않는다. '
+                  '청자가 해 주기를 바라는 부탁과 함께 가자는 제안을 구별한다. 해설 없이 완성된 대화만 translation에 쓴다.')
+    sources.extend(g['출처'] for g in guides if '출처' in g)
     value = checked_draft(prompt, context, language, progress)
     if value is None:
         return {'kind': 'unverified', 'text': '', 'sources': [], 'evidence': []}
     return {'text': value, 'kind': 'model', 'model': MODEL, 'evidence': aligned_terms(value),
-            'sources': sources}
+            'sources': list(dict.fromkeys(sources))}
 
 
 if __name__ == '__main__':

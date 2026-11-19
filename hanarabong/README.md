@@ -18,6 +18,8 @@
 
 표준어에서 제주어로 옮길 때 첫인사·자기소개·식사나 동행 제안에 해당하면 그 상황의 회화 문형도 참고합니다. 식사 제안에서는 함께 먹자는 표현과 상대가 먹을 의향이 있는지 묻는 표현을 구분합니다. [제주어연구소 인사말 풀이](https://www.jejueo999.kr/index.php/contents/qna?act=view&bd_bcid=qna&page=18&seq=2430) · [음식점 회화 수업](https://www.jejueo999.kr/index.php/contents/notice/class?act=view&bd_bcid=notice_class&page=7&seq=717)
 
+“받아주시겠어요?” 같은 부탁과 “먹으러 가실래요?” 같은 제안이 이어지면 각 구절에서 누가 무엇을 할지 따로 확인합니다. 의도를 나타내는 ‘-젠’, 목적을 나타내는 ‘-레’는 제주어학교 회화 용례를, 정중한 부탁은 JIT의 ‘ᄀᆞᆯ아주시쿠과?’를 참고합니다. ‘사랑해요’에는 ‘소랑헴수다’가 쓰인 연구 예문도 제공합니다. [의도를 나타내는 ‘-젠’](https://www.jejueo999.kr/index.php/contents/notice/class?act=view&bd_bcid=notice_class&page=&seq=710) · [‘밥 먹으레 가카?’ 회화 수업](https://www.jejueo999.kr/index.php/contents/notice/class?act=view&bd_bcid=notice_class&page=&seq=787) · [임규홍, 「국어 방언 정도부사 연구」 예문 147](https://www.krm.or.kr/krmts/sdata/frbr/file/2008/KoreaUniv/pdf1/20081027133808398290.pdf)
+
 최초 실행 시 `run.sh`가 SQLite 색인을 만듭니다. 자료를 갱신할 때는 프로젝트 루트에서 `python3 hanarabong/translation.py`를 실행합니다. 새 문장 번역은 `test/README.txt`에 있는 로컬 Ollama 서비스(`127.0.0.1:18765`, `qwen3:32b`)를 사용합니다. 듣기는 퀴즈와 같은 VoxCPM2 · AI Hub + JSS 체크포인트와 목소리 03으로 48 kHz WAV를 만듭니다. 처음 새 문장을 들을 때 모델을 GPU에 올립니다. 기본 GPU는 물리 장치 2이며 서버 실행 시 `CUDA_VISIBLE_DEVICES`로 지정할 수 있습니다.
 
 오프라인 파일에서는 기본 낱말과 퀴즈 예문을 양방향으로 찾을 수 있습니다. 수록된 제주어 문장의 낭독도 파일 안에 들어 있습니다.

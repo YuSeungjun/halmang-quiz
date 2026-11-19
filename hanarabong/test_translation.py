@@ -6,6 +6,45 @@ import translation as tr
 
 
 class TranslationTest(unittest.TestCase):
+    def test_unpunctuated_conversation_keeps_requests_and_invitations_separate(self):
+        clauses = ['사랑해요', '저는 지금부터 당신에게 고백하려고 합니다', '제 고백을 받아주시겠어요',
+                   '고백을 받고 고기국수라도 먹으러 가실래요?']
+        guides = tr.clause_guides(' '.join(clauses))
+        self.assertEqual([g['원문'] for g in guides], clauses)
+        opening = '소랑합니다. 지금부터 고백허젠 헴수다. '
+        request = '내 고백 받아줄 거꽈? '
+        invitation = '받고 나민 고기국수라도 먹으레 갈 거꽈?'
+        self.assertEqual(tr.check_clauses(guides, opening + request + invitation), '')
+        self.assertIn('부탁', tr.check_clauses(guides, opening + '내 고백을 받아카마씨? ' + invitation))
+        self.assertIn('이동', tr.check_clauses(guides, opening + request + '고기국수라도 먹으카마씨?'))
+        self.assertIn('낮춰', tr.check_clauses(guides, opening.replace('지금부터', '지금부터 니당게') + request + invitation))
+
+    def test_guides_use_the_action_from_each_request(self):
+        guides = tr.clause_guides('제 사진을 봐주시겠어요?같이 영화 보러 갈래요?')
+        self.assertEqual(len(guides), 2)
+        self.assertIn('봐 주시쿠과?', guides[0]['기능'])
+        self.assertIn('이동', tr.check_clauses(guides, '제 사진 봐 주시쿠과? 고치 영화 보카마씨?'))
+        self.assertEqual(tr.check_clauses(guides, '제 사진 봐 주시쿠과? 고치 영화 보레 가카마씨?'), '')
+        self.assertFalse(tr.clause_guides('동생이 “같이 영화 보러 갈래요?” 하고 물었어요.'))
+        self.assertFalse(tr.clause_guides('동문시장에서 만나서 고기국수라도 먹을래요?'))
+
+    def test_pronouns_are_restored_only_for_the_matching_noun_in_its_clause(self):
+        guides = tr.clause_guides('지금부터 당신에게 부탁하려고 합니다. 제 사진을 봐주시겠어요?')
+        self.assertEqual(tr.align_pronouns(guides, '지금부터 당신게 부탁허젠 헴수다. 저게 사진 봐 주시쿠과?'),
+                         '지금부터 당신에게 부탁허젠 헴수다. 제 사진 봐 주시쿠과?')
+        omitted = '지금부터 부탁허젠 헴수다. 사진 봐 주시쿠과?'
+        self.assertEqual(tr.align_pronouns(guides, omitted), omitted)
+        self.assertEqual(tr.align_pronouns(guides, '저게 뭐우꽈?'), '저게 뭐우꽈?')
+        direct = tr.clause_guides('저는 지금부터 당신에게 부탁하려고 합니다. 제 사진을 봐주시겠어요?')
+        self.assertEqual(tr.align_pronouns(direct, '지금부터 저가 당신게 부탁허젠 헴수다. 사진 봐 주시쿠과?'), omitted)
+
+    def test_contradictory_review_triggers_a_retry(self):
+        context = {'입력 문장': '도와주세요.', '어휘 풀이': {}, '참고 용례': []}
+        report = {key: True for key in tr.CHECKS}
+        report['feedback'] = '청자에게 부탁하는 어미로 바꾸세요.'
+        with patch.object(tr, 'ollama_json', return_value=report):
+            self.assertEqual(tr.check_sentence(context, '도와줍서.', 'ko-je'), report['feedback'])
+
     def test_introduction_and_invitation_need_grounded_korean_endings(self):
         original = '안녕하세요 저는 한지민입니다. 시장에서 만나서 점심 먹을래요?'
         notes = tr.conversation_patterns(original)
