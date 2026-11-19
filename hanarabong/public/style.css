@@ -294,6 +294,12 @@ textarea.ruled-text:focus-visible { outline: 2px solid #657b53; outline-offset: 
   border-top: 1px solid var(--line);
 }
 .phrasebook-foot p { color: #626858; font-size: 13px; }
+#word-evidence { padding: 12px clamp(18px,3vw,44px) 16px; border-top: 1px solid var(--line); }
+#word-evidence h3 { font-size: 14px; color: var(--green); }
+#word-evidence ul { list-style: none; padding: 0; margin: 4px 0 0; font-size: 14px; }
+#word-evidence li + li { margin-top: 5px; }
+#word-evidence a { color: var(--green); text-decoration: underline; text-underline-offset: 3px; margin-inline-start: .7em; }
+#word-evidence small { display: block; color: var(--mute); }
 .phrase-actions { display: flex; align-items: center; gap: 18px; }
 #translation-reset {
   display: inline-flex;

@@ -6,6 +6,7 @@ import re
 from pathlib import Path
 
 from catalog import AUDIO, HERE, PROJECT, eligible_questions, learner_question
+from vocabulary import vocabulary
 
 PUBLIC = HERE / 'public'
 OUTPUT = HERE / '하나라봉.html'
@@ -31,7 +32,7 @@ def main():
     html = html.replace('href="fruit.svg"', 'data-file-href="fruit.svg"')
     html = re.sub(r'src="(fruit\.svg|assets/[^"]+)"', r'data-file-src="\1"', html)
     html = re.sub(r'srcset="(assets/[^"]+)"', r'data-file-srcset="\1"', html)
-    bundle = {'questions': questions, 'files': {url: embed(path) for url, path in files.items()},
+    bundle = {'questions': questions, 'words': vocabulary(), 'files': {url: embed(path) for url, path in files.items()},
               'css': (PUBLIC / 'style.css').read_text()}
     data = json.dumps(bundle, ensure_ascii=False, separators=(',', ':')).replace('<', r'\u003c')
     loader = """<script>
@@ -41,7 +42,7 @@ for (const [path, [type, bytes]] of Object.entries(packed.files)) {
   const data = Uint8Array.from(atob(bytes), c => c.charCodeAt(0));
   media[path] = URL.createObjectURL(new Blob([data], {type}));
 }
-window.hanarabongPocket = {questions: packed.questions, media};
+window.hanarabongPocket = {questions: packed.questions, words: packed.words, media};
 const styles = document.createElement('style');
 styles.textContent = packed.css.replace(/url\\('([^']+)'\\)/g, (_, path) => 'url('+media[path]+')');
 document.head.append(styles);

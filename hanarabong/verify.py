@@ -248,6 +248,7 @@ def check_translation(browser, width):
     reset.click()
     assert not source.input_value() and reset.is_disabled() and source.evaluate('e => document.activeElement === e')
     assert submit.is_disabled() and listen.is_disabled() and not result.inner_text()
+    check_word_lookup(page)
     for original, translated, corpus in [
             ('학교 동산에 동백꽃 많이 피었더라', '학교 동산에 동백고장 하영 피어서라', 'AI Hub'),
             ('건 어떵 허는 거꽈?', '그건 어떻게 하는 겁니까?', 'JIT')]:
@@ -314,6 +315,25 @@ def check_translation(browser, width):
     print(f'{width}px · Standard Korean first, JIT / AI Hub, Qwen3 translation, Jeju-only playback, quiz resume: passed')
 
 
+def check_word_lookup(page):
+    source = page.locator('#source-example')
+    result = page.locator('#target-example')
+    evidence = page.locator('#word-evidence')
+    source.fill('할아버지')
+    page.locator('.translation-submit').click()
+    page.get_by_role('link', name='제주어대사전', exact=True).wait_for()
+    assert result.inner_text() == '하르방' and '하르버지' in evidence.inner_text()
+    page.locator('#swap-languages').click()
+    assert evidence.is_hidden()
+    source.fill('하르버지')
+    page.locator('.translation-submit').click()
+    page.get_by_role('link', name='제주어대사전', exact=True).wait_for()
+    assert result.inner_text() == '할아버지'
+    page.locator('#swap-languages').click()
+    page.locator('#translation-reset').click()
+    assert not result.inner_text() and evidence.is_hidden()
+
+
 def check_offline_translation(browser):
     context = browser.new_context(offline=True, viewport={'width':360,'height':800})
     page = context.new_page()
@@ -330,6 +350,8 @@ def check_offline_translation(browser):
     page.locator('.translation-submit').click()
     page.get_by_role('button', name='제주어 듣기', exact=True).click()
     assert all('서버판' in page.locator(selector).inner_text() for selector in ('#translation-status','#speech-status'))
+    page.locator('#swap-languages').click()
+    check_word_lookup(page)
     context.close()
     print('Offline exact pair lookup, Jeju-only recordings before and after swap, server-only guidance: passed')
 

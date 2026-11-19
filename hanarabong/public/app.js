@@ -458,6 +458,7 @@ const sourceLanguage = $('#source-language');
 const targetLanguage = $('#target-language');
 const swapButton = $('#swap-languages');
 const statusLine = $('#translation-status');
+const evidenceBox = $('#word-evidence');
 const submitButton = $('.translation-submit');
 const resetButton = $('#translation-reset');
 const submitPercent = $('.submit-percent', submitButton);
@@ -550,7 +551,44 @@ function clearEntry() {
   cancelTranslation();
   clearSentenceAudio();
   targetBox.textContent = '';
+  showEvidence([]);
   statusLine.textContent = pocket ? offlineNote : '';
+}
+
+function showEvidence(entries) {
+  const list = $('ul', evidenceBox);
+  list.replaceChildren();
+  for (const entry of entries) {
+    const item = document.createElement('li');
+    item.append(entry.je + ' · ' + entry.ko);
+    const link = document.createElement('a');
+    link.href = entry.url;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.textContent = entry.source;
+    item.append(link);
+    if (entry.variants?.length) {
+      const variants = document.createElement('small');
+      variants.textContent = '함께 쓰는 말 · ' + entry.variants.join(', ');
+      item.append(variants);
+    }
+    list.append(item);
+  }
+  evidenceBox.hidden = !entries.length;
+}
+
+function showTranslation(result) {
+  targetBox.textContent = result.text;
+  showEvidence(result.evidence || []);
+  if (result.kind === 'unverified') {
+    statusLine.textContent = '원문의 뜻과 말투를 보존한 번역을 확인하기 어려워요. 문장을 짧게 나눠 보세요.';
+    showProgress();
+    return;
+  }
+  if (result.kind === 'word') statusLine.textContent = '기본 낱말 · 대표 표현';
+  else if (result.kind === 'corpus') statusLine.textContent = result.sources.join(' · ') + '에 실린 문장쌍이에요.';
+  else statusLine.textContent = 'AI 번역 · ' + result.model + ' · 참고 자료 ' + result.sources.join(' · ');
+  showProgress(100);
 }
 
 function resetEntry() {
@@ -647,14 +685,17 @@ async function translateEntry() {
   const text = sourceBox.value.trim();
   if (submitButton.disabled || !text || translationRequest) return;
   if (sourceIsStandard) clearSentenceAudio();
+  showEvidence([]);
   showProgress(0, '번역을 시작하고 있어요.');
   if (pocket) {
     const [source, target] = sourceIsStandard ? ['standard', 'sentence'] : ['sentence', 'standard'];
-    const key = s => s.normalize('NFC').replace(/\s+/g, ' ').trim().replace(/\.+$/, '');
-    const match = pocket.questions.find(q => key(q[source]) === key(text));
-    targetBox.textContent = match ? match[target] : '';
-    statusLine.textContent = match ? '낱말책에 담긴 생활방언 예문이에요.' : offlineNote;
-    showProgress(match ? 100 : null);
+    const key = s => s.normalize('NFC').replace(/\s+/g, ' ').trim().replace(/\s+([,.?!])/g, '$1').replace(/\.+$/, '').trim();
+    const term = key(text);
+    const word = pocket.words.find(w => sourceIsStandard ? w.ko === term : w.je === term || w.variants?.includes(term));
+    const match = pocket.questions.find(q => key(q[source]) === term);
+    if (word) showTranslation({kind: 'word', text: sourceIsStandard ? word.je : word.ko, evidence: [word]});
+    else if (match) showTranslation({kind: 'corpus', text: match[target], sources: ['생활방언']});
+    else { targetBox.textContent = ''; statusLine.textContent = offlineNote; showProgress(); }
     refreshControls();
     return;
   }
@@ -666,10 +707,7 @@ async function translateEntry() {
     const response = await requestSentence('translate', {text, direction: sourceIsStandard ? 'ko-je' : 'je-ko'}, request.signal);
     const result = await receiveTranslation(response, request.signal);
     if (request.signal.aborted) return;
-    targetBox.textContent = result.text;
-    statusLine.textContent = result.kind === 'corpus' ? result.sources.join(' · ') + '에 실린 문장쌍이에요.'
-      : 'AI 번역 · ' + (result.sources.length ? result.sources.join(' · ') + ' 용례 참고' : 'Qwen3 32B');
-    showProgress(100);
+    showTranslation(result);
   } catch (error) {
     if (!request.signal.aborted) { showProgress(); statusLine.textContent = error.message; }
   } finally {

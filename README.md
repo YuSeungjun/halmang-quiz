@@ -2,7 +2,7 @@
 
 제주 할망과 함께 생활 속 제주어를 익히는 10문제 낱말 퀴즈와 제주어·표준어 문장 번역기입니다.
 
-**바로 체험하려면** [하나라봉.html 다운로드](https://github.com/YuSeungjun/halmang-quiz/raw/refs/heads/main/hanarabong/하나라봉.html)를 눌러 파일을 저장한 뒤 브라우저에서 여세요. 퀴즈 56문항과 문장 음성 53개, 수록 예문의 양방향 번역이 파일에 들어 있습니다.
+**바로 체험하려면** [하나라봉.html 다운로드](https://github.com/YuSeungjun/halmang-quiz/raw/refs/heads/main/hanarabong/하나라봉.html)를 눌러 파일을 저장한 뒤 브라우저에서 여세요. 퀴즈 56문항과 문장 음성 53개, 기본 낱말과 수록 예문의 양방향 번역이 파일에 들어 있습니다.
 
 ## 내 컴퓨터에서 퀴즈 서버 실행하기
 
