@@ -18,4 +18,6 @@ python3 hanarabong/serve.py
 
 자유 입력 번역에는 JIT 학습 문장쌍(`data/jit/`), AI Hub 71558 훈련 라벨(`data/aihub-71558/extracted/Training/labels/`), 로컬 Ollama의 Qwen3 32B가 필요합니다. 새 제주어 문장을 낭독하려면 VoxCPM2 실행 환경, AI Hub + JSS로 학습한 `step_0002362` 체크포인트, 목소리 03 참조 음성을 별도로 준비하세요. 해당 환경에서 `sh hanarabong/run.sh`를 실행하면 번역 색인을 만들고 서버를 시작합니다.
 
-퀴즈 규칙, 모델 구성과 검증 방법은 [학습자용 사이트 설명](hanarabong/README.md)에 있습니다.
+학습 서버의 문맥 검색은 Kiwi를 사용합니다. Qwen3 32B 제주어 어댑터의 학습 자료, 설치 버전과 양방향 평가 결과는 [번역 모델 실험 기록](hanarabong/TRANSLATION.md)에 있습니다.
+
+퀴즈 규칙과 화면 검증 방법은 [학습자용 사이트 설명](hanarabong/README.md)에 있습니다.

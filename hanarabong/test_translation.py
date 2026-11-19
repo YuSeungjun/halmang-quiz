@@ -1,11 +1,50 @@
 """Regression cases for dictionary routing and the generated-sentence review."""
 import unittest
+import sqlite3
+import tempfile
+from contextlib import closing
+from pathlib import Path
 from unittest.mock import patch
 
 import translation as tr
 
 
 class TranslationTest(unittest.TestCase):
+    def test_mixed_register_keeps_past_emotion_and_casual_invitation(self):
+        self.assertFalse(tr.clause_guides('길이 두 갈래?'))
+        self.assertFalse(tr.polite_offers('길이 두 갈래요?'))
+        guides = tr.clause_guides('사랑해요 저는 당신을 좋아하고 있었어요 아빠도 마트 같이 갈래? 허허')
+        draft = tr.align_pronouns(guides, '소랑해요 저는 당신을 좋아햇수다 아방도 마트 고치 가젠? 허허')
+        self.assertEqual(draft, '소랑헴수다. 저는 당신을 좋아햇수다. 아방도 마트 고치 가젠? 허허')
+        self.assertEqual(tr.check_clauses(guides, draft), '')
+        self.assertIn('대상', tr.check_clauses(guides, draft.replace('당신을', '날')))
+        self.assertIn('과거', tr.check_clauses(guides, draft.replace('좋아햇수다', '좋아헴수다')))
+        self.assertIn('반말', tr.check_clauses(guides, draft.replace('가젠?', '갈 거꽈?')))
+
+    def test_context_index_ranks_senses_and_detects_a_replaced_catalog(self):
+        import retrieval
+        rows = [('여긴 두 갈래.', '이딘 두 갈래.'), ('너도 같이 밭에 갈래?', '느도 고치 바티 가젠?'),
+                ('방문 있었어요?', '방문 잇엇어예?'), ('아주 좋아했어요.', '막 좋아햇수다.')]
+        with tempfile.TemporaryDirectory() as folder:
+            base = Path(folder) / 'pairs.sqlite3'
+            with closing(sqlite3.connect(base)) as db:
+                db.execute('CREATE TABLE pair(id INTEGER PRIMARY KEY, source, ko, je, ko_key, je_key)')
+                db.executemany("INSERT INTO pair(source,ko,je,ko_key,je_key) VALUES('fixture',?,?,?,?)",
+                               [(ko, je, ko, je) for ko, je in rows])
+                db.commit()
+            retrieval.build(base)
+            def examples(text):
+                with closing(sqlite3.connect(base.as_uri() + '?mode=ro', uri=True)) as db:
+                    return [ko for _, ko, _ in retrieval.find_examples(db, base, text)]
+            self.assertEqual(examples('아빠도 마트 같이 갈래?')[0], rows[1][0])
+            self.assertNotIn(rows[0][0], examples('아빠도 같이 갈래?'))
+            self.assertEqual(examples('저는 당신을 좋아하고 있었어요.')[0], rows[3][0])
+            self.assertEqual(examples('길이 두 갈래야?')[0], rows[0][0])
+            with closing(sqlite3.connect(base)) as db:
+                db.execute('UPDATE pair SET ko="changed" WHERE id=1')
+                db.commit()
+            self.assertEqual(examples('같이 갈래?'), [])
+
     def test_unpunctuated_conversation_keeps_requests_and_invitations_separate(self):
         clauses = ['사랑해요', '저는 지금부터 당신에게 고백하려고 합니다', '제 고백을 받아주시겠어요',
                    '고백을 받고 고기국수라도 먹으러 가실래요?']
